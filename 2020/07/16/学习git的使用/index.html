@@ -20,6 +20,9 @@
   
 
   
+    <meta name="description" content="@TOC
+git的本地工作流程)">
+  
 
   <!-- feed -->
   
@@ -477,7 +480,7 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://xaoxuu.com" target="_blank" rel="nofollow noopener">
+  <a href="https://zephaniah-h.github.io/" target="_blank" rel="nofollow noopener">
     <img no-lazy src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
     <p>Zephaniah</p>
   </a>
@@ -519,7 +522,9 @@
           
           
           <p>@<a href="学习git的使用">TOC</a></p>
-<h3 id="git的本地工作流程"><a href="#git的本地工作流程" class="headerlink" title="git的本地工作流程"></a>git的本地工作流程</h3><p><img src="https://img-blog.csdnimg.cn/20200715142033890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200715142408940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>git init</code> 初始化仓库，让git知道它要管理这个仓库，生成隐藏文件.git<br><code>git status</code> 查看当前状态（工作区、缓存区、Git Repository本地仓库）<br><code>git add</code> 添加到缓存区<br><img src="https://img-blog.csdnimg.cn/20200715142701321.png" alt="在这里插入图片描述"><br><code>git commit -m &quot;提交说明/描述&quot;</code> 提交到本地仓库</p>
+<h3 id="git的本地工作流程"><a href="#git的本地工作流程" class="headerlink" title="git的本地工作流程"></a>git的本地工作流程</h3><p><img src="https://img-blog.csdnimg.cn/20200715142033890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200715142408940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<p><code>git init</code> 初始化仓库，让git知道它要管理这个仓库，生成隐藏文件.git<br><code>git status</code> 查看当前状态（工作区、缓存区、Git Repository本地仓库）<br><code>git add</code> 添加到缓存区<br><img src="https://img-blog.csdnimg.cn/20200715142701321.png" alt="在这里插入图片描述"><br><code>git commit -m &quot;提交说明/描述&quot;</code> 提交到本地仓库</p>
 <h3 id="git的版本回退操作（时光穿梭机）"><a href="#git的版本回退操作（时光穿梭机）" class="headerlink" title="git的版本回退操作（时光穿梭机）"></a>git的版本回退操作（时光穿梭机）</h3><p><code>git log</code> 查看操作日志（显示作者、编号、当前版本、提交日期、提交注释）<br><code>git log --pretty=oneline</code> 查看操作日志（只显示编号、当前版本、提交注释）<br><code>git reset --hard 提交编号</code> 回溯到该编号的版本<br><code>git</code> <a href="http://dict.youdao.com/w/reflog" target="_blank" rel="noopener"><code>reflog</code></a> 由于git log只能看到当前以及之前的编号，所以要用到这个才能看到当前之后的编号，便于回溯到了之前又想回溯到之后的版本<br><code>mkdir 文件夹名</code> 创建文件夹<br><code>cd 文件地址</code> 进入文件夹<br><em>注意：编号可以不写全，但最好要写4位以上，避免以后编号多了会重复。</em></p>
 <h3 id="基于https协议的github远程仓库的使用"><a href="#基于https协议的github远程仓库的使用" class="headerlink" title="基于https协议的github远程仓库的使用"></a>基于https协议的github远程仓库的使用</h3><p>在github创建了一个新的仓库之后可以看到地址（默认是https协议）：<br><img src="https://img-blog.csdnimg.cn/20200715150255196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>git clone 线上仓库地址</code> 克隆线上仓库到本地<br><code>git push</code> 修改完代码之后提交到本地仓库之后就使用该指令<strong>提交到线上仓库</strong>，但是要先在.git/config文件的url的//后面加上github的<code>用户名:密码@</code>，不然会提示权限不足（每天下班的最后一件事要<code>git push</code>）<br><code>git pull</code> 拉取线上仓库最新版本（每天上班的时候第一件事要<code>git pull</code>）</p>
 <h3 id="基于ssh协议（推荐用这个）"><a href="#基于ssh协议（推荐用这个）" class="headerlink" title="基于ssh协议（推荐用这个）"></a>基于ssh协议（推荐用这个）</h3><p>基于ssh协议与https相比，只是影响github对于用户的身份鉴权方式，其他操作一模一样<br>点击Use SSH可以切换到ssh协议：<br><img src="https://img-blog.csdnimg.cn/20200715150535942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>生成公私钥对指令（需先自行安装OpenSSH）：<code>ssh-keygen -t rsa -C &quot;注册邮箱&quot;</code>（输入完这行代码之后一直回车就行了，然后他会显示公钥和私钥在哪个文件，自己去找到填在github上就行了）<br><strong>步骤:<br>1.生成客户端公私钥文件<br>2.将公钥上传到Github</strong><br>完了之后就可以克隆到本地啊，添加缓存区啊，提交本地仓库啊等等操作</p>
@@ -615,7 +620,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-16T03:17:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-16T04:04:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jul 16, 2020</p>
@@ -642,7 +647,8 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary=@TOC
+git的本地工作流程)"
           
           >
           
@@ -654,7 +660,8 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary=@TOC
+git的本地工作流程)"
           
           >
           
@@ -666,7 +673,8 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary=@TOC
+git的本地工作流程)"
           
           >
           
