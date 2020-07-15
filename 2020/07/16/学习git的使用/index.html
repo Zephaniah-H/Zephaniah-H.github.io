@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello World - Zephaniah&#39;s Blog</title>
+  <title>学习git的使用 - Zephaniah&#39;s Blog</title>
   
 
   
@@ -412,7 +412,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">Hello World</div>
+  <div id="pjax-pageTitle">学习git的使用</div>
   <div id="pjax-enable-cover">true</div>
   
   <div id="valine-path">none</div>
@@ -463,8 +463,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/07/16/hello-world/">
-      Hello World
+    <a href="/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/">
+      学习git的使用
     </a>
   </h1>
 
@@ -518,19 +518,16 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <p>@<a href="学习git的使用">TOC</a></p>
+<h3 id="git的本地工作流程"><a href="#git的本地工作流程" class="headerlink" title="git的本地工作流程"></a>git的本地工作流程</h3><p><img src="https://img-blog.csdnimg.cn/20200715142033890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200715142408940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>git init</code> 初始化仓库，让git知道它要管理这个仓库，生成隐藏文件.git<br><code>git status</code> 查看当前状态（工作区、缓存区、Git Repository本地仓库）<br><code>git add</code> 添加到缓存区<br><img src="https://img-blog.csdnimg.cn/20200715142701321.png" alt="在这里插入图片描述"><br><code>git commit -m &quot;提交说明/描述&quot;</code> 提交到本地仓库</p>
+<h3 id="git的版本回退操作（时光穿梭机）"><a href="#git的版本回退操作（时光穿梭机）" class="headerlink" title="git的版本回退操作（时光穿梭机）"></a>git的版本回退操作（时光穿梭机）</h3><p><code>git log</code> 查看操作日志（显示作者、编号、当前版本、提交日期、提交注释）<br><code>git log --pretty=oneline</code> 查看操作日志（只显示编号、当前版本、提交注释）<br><code>git reset --hard 提交编号</code> 回溯到该编号的版本<br><code>git</code> <a href="http://dict.youdao.com/w/reflog" target="_blank" rel="noopener"><code>reflog</code></a> 由于git log只能看到当前以及之前的编号，所以要用到这个才能看到当前之后的编号，便于回溯到了之前又想回溯到之后的版本<br><code>mkdir 文件夹名</code> 创建文件夹<br><code>cd 文件地址</code> 进入文件夹<br><em>注意：编号可以不写全，但最好要写4位以上，避免以后编号多了会重复。</em></p>
+<h3 id="基于https协议的github远程仓库的使用"><a href="#基于https协议的github远程仓库的使用" class="headerlink" title="基于https协议的github远程仓库的使用"></a>基于https协议的github远程仓库的使用</h3><p>在github创建了一个新的仓库之后可以看到地址（默认是https协议）：<br><img src="https://img-blog.csdnimg.cn/20200715150255196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>git clone 线上仓库地址</code> 克隆线上仓库到本地<br><code>git push</code> 修改完代码之后提交到本地仓库之后就使用该指令<strong>提交到线上仓库</strong>，但是要先在.git/config文件的url的//后面加上github的<code>用户名:密码@</code>，不然会提示权限不足（每天下班的最后一件事要<code>git push</code>）<br><code>git pull</code> 拉取线上仓库最新版本（每天上班的时候第一件事要<code>git pull</code>）</p>
+<h3 id="基于ssh协议（推荐用这个）"><a href="#基于ssh协议（推荐用这个）" class="headerlink" title="基于ssh协议（推荐用这个）"></a>基于ssh协议（推荐用这个）</h3><p>基于ssh协议与https相比，只是影响github对于用户的身份鉴权方式，其他操作一模一样<br>点击Use SSH可以切换到ssh协议：<br><img src="https://img-blog.csdnimg.cn/20200715150535942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>生成公私钥对指令（需先自行安装OpenSSH）：<code>ssh-keygen -t rsa -C &quot;注册邮箱&quot;</code>（输入完这行代码之后一直回车就行了，然后他会显示公钥和私钥在哪个文件，自己去找到填在github上就行了）<br><strong>步骤:<br>1.生成客户端公私钥文件<br>2.将公钥上传到Github</strong><br>完了之后就可以克隆到本地啊，添加缓存区啊，提交本地仓库啊等等操作</p>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p><img src="https://img-blog.csdnimg.cn/20200715123101176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="什么是分支">)<img src="https://img-blog.csdnimg.cn/202007151233515.png" alt="分支描述"><br>分支相关指令：<br>查看分支：<code>git branch</code><br>创建分支：<code>git branch 分支名</code><br>切换分支：<code>git checkout 分支名</code><br>删除分支：<code>git branch -d 分支名</code><br><em>注意：在删除分支的时候，一定要先退出要删除的分支，不然是删除不掉的。</em><br>合并分支：<code>git</code> <a href="https://fanyi.baidu.com/?aldtype=85#en/zh/merge" target="_blank" rel="noopener"><code>merge</code></a> <code>被合并的分支名</code><br><img src="https://img-blog.csdnimg.cn/20200715124038397.png" alt="在这里插入图片描述"></p>
+<h3 id="冲突的产生与解决"><a href="#冲突的产生与解决" class="headerlink" title="冲突的产生与解决"></a>冲突的产生与解决</h3><p><strong>产生</strong>：在下班我<code>git push</code>之后，有同事修改了代码，然后我第二天上班没有<code>git pull</code>，而是直接修改代码，然后下班的时候<code>git push</code>就会产生冲突。<br><img src="https://img-blog.csdnimg.cn/20200715133537726.png" alt="在这里插入图片描述"><br><strong>解决</strong>：先git pull，然后系统会自动把线上仓库和本地仓库的冲突合并，然后我们需要和之前修改代码的同事商量该如何删除或保留这个合并之后的代码。最后商量好了就可以<code>git add</code> 、<code>git commit -m</code> 、<code>git push</code>了</p>
+<h3 id="Git实用技能"><a href="#Git实用技能" class="headerlink" title="Git实用技能"></a>Git实用技能</h3><p>1、图形管理工具<br>①Github for Desktop<br><img src="https://img-blog.csdnimg.cn/20200715134708592.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>②source tree<br><img src="https://img-blog.csdnimg.cn/20200715134745700.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">)<img src="https://img-blog.csdnimg.cn/20200715134805761.png" alt="在这里插入图片描述"><br>③TortoiseGit<br><img src="https://img-blog.csdnimg.cn/20200715134855479.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>④装好git自带的，在非仓库的地方右键<code>Git GUI Here</code><br><img src="https://img-blog.csdnimg.cn/20200715135032209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p><img src="https://img-blog.csdnimg.cn/20200715135637342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1plcGhhbmlhaF8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>创建.gitignore文件：<br><img src="https://img-blog.csdnimg.cn/20200715140441348.png" alt="创建.gitignore文件"><br>写在.gitignore文件里：<br>1.<code>/mtk/</code>          过滤整个mtk文件夹<br>2.<code>*.zip</code>           过滤所有.zip文件<br>3.<code>/mtk/do.c</code>    过滤mtk文件夹下do.c文件<br>4.<code>!index.php</code> 不过滤index.php文件<br><em>在文件中以#开头的都是注释</em></p>
+<p>该文章是我在b站学习的笔记，视频地址：<a href="https://www.bilibili.com/video/BV1sJ411D7xN?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1sJ411D7xN?p=1</a></p>
 
           
             <div class='article_footer'>
@@ -567,7 +564,7 @@
           
         
           
-            <p>本文永久链接是：<a href=http://yoursite.com/2020/07/16/hello-world/>http://yoursite.com/2020/07/16/hello-world/</a></p>
+            <p>本文永久链接是：<a href=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/>http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/</a></p>
           
         
       </blockquote>
@@ -618,7 +615,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-16T01:51:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-16T03:17:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jul 16, 2020</p>
@@ -645,7 +642,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/16/hello-world/&title=Hello World - Zephaniah's Blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary="
           
           >
           
@@ -657,7 +654,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/16/hello-world/&title=Hello World - Zephaniah's Blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary="
           
           >
           
@@ -669,7 +666,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/16/hello-world/&title=Hello World - Zephaniah's Blog&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/&title=学习git的使用 - Zephaniah's Blog&summary="
           
           >
           
@@ -693,12 +690,11 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>学习git的使用</p>
-                <p class='content'>@TOC
-git的本地工作流程)git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏文件.gitgit status 查看当前状态（工作区、缓存区、Git Repository本...</p>
-              </a>
             
+              <a class='next' href='/2020/07/16/hello-world/'>
+                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+              </a>
             
           </div>
         
@@ -751,7 +747,7 @@ git的本地工作流程)git init 初始化仓库，让git知道它要管理这�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git的本地工作流程"><span class="toc-text">git的本地工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git的版本回退操作（时光穿梭机）"><span class="toc-text">git的版本回退操作（时光穿梭机）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于https协议的github远程仓库的使用"><span class="toc-text">基于https协议的github远程仓库的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于ssh协议（推荐用这个）"><span class="toc-text">基于ssh协议（推荐用这个）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-text">分支管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#冲突的产生与解决"><span class="toc-text">冲突的产生与解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git实用技能"><span class="toc-text">Git实用技能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#忽略文件"><span class="toc-text">忽略文件</span></a></li></ol>
     </div>
   </section>
 
