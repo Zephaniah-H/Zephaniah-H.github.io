@@ -73,10 +73,7 @@
   <div class='a'>
     
     
-      <p class="title">Zephaniah's Blog</p>
-    
-    
-      <p class="subtitle">Pain is inevitable. Suffering is optional. 痛苦不可避免，但可以选择是否受苦。</p>
+	<img class="title" src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/myblogfont.png">
     
   </div>
   <div class='b'>
@@ -149,6 +146,15 @@
         
       </ul>
     </div>
+	<!-- 打字特效 -->
+    <script src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.0/js/typed.js"></script>
+    <div style="text-align: center;font-weight: bold;color: #1BC3FB;">
+      <span id="subtitle"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+      var typed = new Typed("#subtitle", { strings: ["For the longed goal  I shall despite wind and rain go.", "既然选择了远方，便只顾风雨兼程。", "愿自己的努力终将获得回报。", "花开不是为了花落，而是为了开的更加灿烂。", "没有伞的孩子必须努力奔跑！", "欲望以提升热忱，毅力以磨平高山。", "如果放弃太早，你永远都不知道自己会错过什么。", "没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。"], startDelay: 1000, typeSpeed: 100, loop: !0, backSpeed: 60, backDelay: 2000, showCursor: !0 })
+    </script>
   </div>
 </div>
 
@@ -404,7 +410,7 @@
   </div>
   
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -426,16 +432,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -480,7 +486,7 @@
               
 <div class='new-meta-item author'>
   <a href="https://zephaniah-h.github.io/" target="_blank" rel="nofollow noopener">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/xiaomeixi.png">
     <p>Zephaniah</p>
   </a>
 </div>
@@ -698,9 +704,7 @@
               <a class='prev' href='/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/'>
                 <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>学习git的使用</p>
                 <p class='content'>@TOC
-git的本地工作流程)
-
-git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏文件.gitgit status 查看当前状态（工作区、缓存区、Git Repositor...</p>
+git的本地工作流程)git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏文件.gitgit status 查看当前状态（工作区、缓存区、Git Repository本...</p>
               </a>
             
             
@@ -802,8 +806,8 @@ git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏�
         <div class="social-wrapper">
           
             
-              <a href="/atom.xml"
-                class="social fas fa-rss flat-btn"
+              <a href="https://blog.csdn.net/Zephaniah_"
+                class="social fab fa-cuttlefish flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
               </a>
@@ -826,7 +830,7 @@ git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏�
             
           
             
-              <a href="https://music.163.com/#/user/home?id=63035382"
+              <a href="https://music.163.com/#/user/home?id=327647958"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -852,7 +856,7 @@ git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏�
     
       
         <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+        <p><a href="https://zephaniah-h.github.io/" target="_blank" rel="noopener">Copyright © 2017-2020 Zephaniah</a></p>
 
         </div>
       
@@ -882,47 +886,6 @@ git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏�
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
-
-  
-  
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
-
-    <script type="text/javascript">
-      $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
-        if ('true' == 'true') {
-          function shuffle(arr){
-            /*From countercurrent-time*/
-            var n = arr.length;
-            while(n--) {
-              var index = Math.floor(Math.random() * n);
-              var temp = arr[index];
-              arr[index] = arr[n];
-              arr[n] = temp;
-            }
-          }
-          shuffle(imgs);
-        }
-        if ('.cover') {
-          $('.cover').backstretch(
-            imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -1276,13 +1239,6 @@ git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏�
       try{
         pjax_fancybox();
         
-          
-          if ('.cover') {
-            $('.cover').backstretch("resize");
-          } else {
-            $.backstretch("resize");
-          }
-        
         
         
           pjax_scrollrebeal();
@@ -1309,5 +1265,13 @@ git init 初始化仓库，让git知道它要管理这个仓库，生成隐藏�
 
     
   </div>
+  <!-- 页面点击烟花绽放 -->
+  <canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+  <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+  <!-- 速度优化脚本 -->
+  <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/instantclick-1.2.2.js" type="module"></script>
+  <!-- 数字雨 -->
+  <canvas id="canvas" width="1920" height="1080"></canvas>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/DigitalRain.js"></script>
 </body>
 </html>
