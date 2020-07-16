@@ -42,8 +42,8 @@ html {
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
-  height: 4px;
-  width: 4px;
+  height: 9px;
+  width: 9px;
 }
 html >::-webkit-scrollbar-track-piece {
   background: transparent;
@@ -57,6 +57,8 @@ html >::-webkit-scrollbar-thumb:hover {
   background: #ff5722;
 }
 body {
+  cursor: url("https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.1.6/images/mouse.cur"), auto;
+  background-color: ;
   background-color: #f4f4f4;
   text-rendering: optimizelegibility;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -360,6 +362,9 @@ table tbody >tr:hover {
 td,
 th {
   padding: 0;
+}
+#player {
+  margin: 0;
 }
 span.btn {
   display: inline;
@@ -3165,8 +3170,7 @@ article .readmore >a {
   height: calc(36vh - 64px + 200px);
 }
 .cover-wrapper .cover.half .cover-body div.b {
-  margin-top: 10%;
-  margin-bottom: 0;
+  margin-top: 0;
 }
 @media screen and (max-width: 500px) {
   .cover-wrapper .cover.half .cover-body div.a {
@@ -4011,6 +4015,16 @@ div.hoverbox:hover >div.target {
 }
 .reveal {
   visibility: hidden;
+}
+canvas {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  z-index: -1;
 }
 .l_header {
   position: fixed;
