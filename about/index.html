@@ -39,7 +39,9 @@
 
   
 
-  
+
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/zf.ico">
+
 
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
@@ -71,17 +73,14 @@
   <div class='a'>
     
     
-      <p class="title">Volantis</p>
-    
-    
-      <p class="subtitle">A Wonderful Theme for Hexo</p>
+	<img width="700" src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/myblogfont.png">
     
   </div>
   <div class='b'>
     
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
+          <input type="text" class="input u-search-input" placeholder="搜点什么..." />
           <i class="icon fas fa-search fa-fw"></i>
         </form>
       </div>
@@ -92,61 +91,66 @@
           
             <li>
               <a class="nav home"
-                href="https://volantis.js.org/getting-started/"
+                href="/"
                 
                 
-                id="https:volantisjsorggetting-started">
-                <i class='fas fa-book fa-fw'></i>文档
+                id="home">
+                <i class='fas fa-home fa-fw'></i>主页
               </a>
             </li>
           
             <li>
               <a class="nav home"
-                href="https://volantis.js.org/archives/"
+                href="/categories/"
                 
                 
-                id="https:volantisjsorgarchives">
-                <i class='fas fa-rss fa-fw'></i>博文
+                id="categories">
+                <i class='fas fa-folder-open fa-fw'></i>分类
               </a>
             </li>
           
             <li>
               <a class="nav home"
-                href="https://volantis.js.org/examples/"
+                href="/tags/"
                 
                 
-                id="https:volantisjsorgexamples">
-                <i class='fas fa-play-circle fa-fw'></i>示例
+                id="tags">
+                <i class='fas fa-tags fa-fw'></i>标签
               </a>
             </li>
           
             <li>
               <a class="nav home"
-                href="https://github.com/volantis-x/hexo-theme-volantis/"
-                
-                  rel="external nofollow noopener noreferrer"
+                href="/archives/"
                 
                 
-                  target="_blank"
-                
-                id="https:githubcomvolantis-xhexo-theme-volantis">
-                <i class='fas fa-file-code fa-fw'></i>源码
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
               </a>
             </li>
           
             <li>
               <a class="nav home"
-                href="https://volantis.js.org/contributors/"
+                href="/about/"
                 
                 
-                id="https:volantisjsorgcontributors">
-                <i class='fas fa-handshake fa-fw'></i>鸣谢
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
               </a>
             </li>
           
         
       </ul>
     </div>
+	<!-- 打字特效 -->
+    <script src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.0/js/typed.js"></script>
+    <div style="text-align: center;font-weight: bold;color: #1c92c4;">
+      <span id="subtitle"></span>
+      <span id="typed-cursor"></span>
+    </div>
+    <script>
+      var typed = new Typed("#subtitle", { strings: ["For the longed goal  I shall despite wind and rain go.", "既然选择了远方，便只顾风雨兼程。", "愿自己的努力终将获得回报。", "花开不是为了花落，而是为了开的更加灿烂。", "没有伞的孩子必须努力奔跑！", "面对黑暗的时候，依然可以选择笑。", "如果放弃太早，你永远都不知道自己会错过什么。", "没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生。"], startDelay: 1000, typeSpeed: 100, loop: !0, backSpeed: 60, backDelay: 2000, showCursor: !0 })
+    </script>
   </div>
 </div>
 
@@ -169,7 +173,7 @@
           
           
           
-            Volantis
+            Zephaniah
           
         </a>
       
@@ -188,7 +192,7 @@
                   
                     id="home"
                   >
-                  <i class='fas fa-rss fa-fw'></i>博客
+                  <i class='fas fa-home fa-fw'></i>主页
                 </a>
                 
               </li>
@@ -302,7 +306,7 @@
                   
                     id="home"
                   >
-                  <i class='fas fa-rss fa-fw'></i>博客
+                  <i class='fas fa-home fa-fw'></i>主页
                 </a>
                 
               </li>
@@ -400,7 +404,7 @@
   </div>
   
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -422,16 +426,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -528,94 +532,65 @@
     </div>
     
   
-  <footer class="clearfix">
-    <br><br>
+  <footer id="footer" class="clearfix">
     
-      
-        <div class="aplayer-container">
+    
+      <div class="social-wrapper">
+           
+            <a href="https://github.com/Zephaniah-H" class="social fab fa-github flat-btn waves-effect waves-button" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
           
+            <a href="https://blog.csdn.net/Zephaniah_" class="social fab fa-cuttlefish flat-btn waves-effect waves-button" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+            <a href="mailto:312975173@qq.com" class="social fas fa-envelope flat-btn waves-effect waves-button" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=312975173&amp;site=qq&amp;menu=yes" class="social fab fa-qq flat-btn waves-effect waves-button" target="_blank" rel="external nofollow noopener noreferrer">
+            </a>
+          
+      </div>
+    
+    <br>
+    Copyright <i class="far fa-copyright"></i> 2019-2020
+    <a href="https://www.itrhx.com/" target="_blank"> Zephaniah'Blog </a>丨
+    <!-- 网站运行时间 -->
+    <span id="timeDate"></span><span id="times"></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("07/16/2020 1:51:00");//建站时间
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已运行 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script>丨
+    <!--<a href="/sitemap.xml" target="_blank">站点地图</a>丨-->
 
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='340px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'>
-    </meting-js>
-  
 
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <span class="post-meta-divider">丨</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数 <span id="busuanzi_value_site_uv"></span> 人
+        </span>
 
-        </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-              <a href="/atom.xml"
-                class="social fas fa-rss flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="mailto:me@xaoxuu.com"
-                class="social fas fa-envelope flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="https://github.com/xaoxuu"
-                class="social fab fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-            
-              <a href="https://music.163.com/#/user/home?id=63035382"
-                class="social fas fa-headphones-alt flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-              </a>
-            
-          
-        </div>
-      
-    
-      
-        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
-</div>
-      
-    
-      
-        Use
-        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        as theme, total visits
-          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          times
-        
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
-
-        </div>
-      
-    
-  </footer>
+丨
+    <span>
+        <a rel="license" href="https://volantis.js.org/" target="_blank" title="站点使用 Material X 主题">
+      <span>Theme:</span><span class="badge-value bg-blue">Volantis</span></a>
+    </span>
+</footer>
 
 
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
@@ -640,47 +615,6 @@
   <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
-
-  
-  
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
-
-    <script type="text/javascript">
-      $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
-        if ('true' == 'true') {
-          function shuffle(arr){
-            /*From countercurrent-time*/
-            var n = arr.length;
-            while(n--) {
-              var index = Math.floor(Math.random() * n);
-              var temp = arr[index];
-              arr[index] = arr[n];
-              arr[n] = temp;
-            }
-          }
-          shuffle(imgs);
-        }
-        if ('.cover') {
-          $('.cover').backstretch(
-            imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "20000",
-            fade: "1500"
-          });
-        }
-      });
-    </script>
-  
 
 
 
@@ -854,7 +788,7 @@
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -973,13 +907,6 @@
       try{
         pjax_fancybox();
         
-          
-          if ('.cover') {
-            $('.cover').backstretch("resize");
-          } else {
-            $.backstretch("resize");
-          }
-        
         
         
           pjax_scrollrebeal();
@@ -1004,5 +931,13 @@
 
     
   </div>
+  <!-- 页面点击烟花绽放 -->
+  <canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+  <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+  <!-- 速度优化脚本 -->
+  <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/instantclick-1.2.2.js" type="module"></script>
+  <!-- 数字雨 -->
+  <canvas id="canvas" width="1920" height="1080"></canvas>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/DigitalRain.js"></script>
 </body>
 </html>
