@@ -499,20 +499,30 @@
 
   
     
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      <section id="comments">
-        <div id="lv-container" data-id="city" data-uid="MTAyMC81MTA1MC8yNzUzMg==">
-  <noscript><div><i class='fas fa-exclamation-triangle'>&nbsp;Unable to load Livere, please make sure your network can access.</div></noscript>
+      <!-- ������City�氲װ���� -->
+
+<div class="post white-box reveal comments shadow">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+	<div id="lv-container" data-id="city" data-uid="MTAyMC81MTA1MC8yNzUzMg==">
 </div>
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
-      </section>
-    </section>
-  </article>
+       if (typeof LivereTower === 'function') { return; }
 
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
 
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+    
   
 
 
@@ -630,18 +640,6 @@
 
 
 <!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
-
-  <script type="text/javascript">
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-</script>
-
 
 
 
