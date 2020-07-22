@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>修改Hexo博客主题 - Zephaniah.</title>
+  <title>如何免费科学上网 - Zephaniah.</title>
   
-    <meta name="keywords" content="hexo,博客主题">
+    <meta name="keywords" content="科学上网">
   
 
   
-    <meta name="description" content="其实也没改什么，但是也遇到了挺多问题，浪费了挺多时间(┬＿┬)">
+    <meta name="description" content="本文主要介绍了一个比较小众的操作简单的科学上网的方式。">
   
 
   <!-- feed -->
@@ -422,7 +422,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">修改Hexo博客主题</div>
+  <div id="pjax-pageTitle">如何免费科学上网</div>
   <div id="pjax-enable-cover">true</div>
   
   <div id="valine-path">none</div>
@@ -473,8 +473,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/07/18/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/">
-      修改Hexo博客主题
+    <a href="/4/">
+      如何免费科学上网
     </a>
   </h1>
 
@@ -512,7 +512,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-07-18</p>
+    <p>2020-07-21</p>
   </a>
 </div>
 
@@ -548,34 +548,26 @@
           
           
           <blockquote>
-<p>我的博客选择的主题是<a href="https://volantis.js.org/" target="_blank" rel="noopener">Volantis</a>，主要是把背景改成了代码雨，添加了打字特效，把评论系统从原来的valine改成了livere。第一次搭建博客主要参考了<a href="https://www.itrhx.com/" target="_blank" rel="noopener">itrhx.com</a>这位在官网看到的大佬博主。</p>
+<p>写在前面：本文介绍的如何免费科学上网是通过一个网站<a href="https://xcat.us/" target="_blank" rel="noopener">xcat.us</a>来实现的，这个网站注册之后有免费三天vip可以用，之后过期了就要充值，最低是￥6元一个月，详情自己进去看。那么问题来了，如何长期免费用呢，聪明的小伙伴就发现了，可以通过不断注册新的帐号来使用，但是这个注册帐号是用邮箱接受验证码来注册的，如果你邮箱够多，那也能用一段时间了，但是现在很多邮箱都要用手机号码来注册，所以也实现不了长期使用啊，不可能每次用完了都去买个手机号，那还不如直接买6块一个月（个人感觉还是挺实惠的），所以我们就要用到不用手机号注册的邮箱了，这里我只找到了一种：<a href="https://mail.yandex.com/" target="_blank" rel="noopener">yandex</a>，其他一些临时邮箱这个网站能检测出来所以用不了。下面我们就来说说怎么注册这个yandex邮箱。</p>
 </blockquote>
-<h2 id="代码雨背景"><a href="#代码雨背景" class="headerlink" title="代码雨背景"></a><font style="color: #1c92c4;">代码雨背景</font></h2><p>在博客上面添加代码雨背景只需要把原来的背景删掉，然后在<code>themes\volantis\layout.ejs</code>这个文件里面的body前面添加以下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"1920"</span> <span class="attr">height</span>=<span class="string">"1080"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.1/js/coderain.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>src里面的地址是代码雨的实现代码，我把它放在github上面用cdn加速访问了。</p>
-<p>然后还要在<code>themes\volantis\source\css\_layout\main.styl</code>的末尾添加：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="打字特效"><a href="#打字特效" class="headerlink" title="打字特效"></a><font style="color: #1c92c4;">打字特效</font></h2><p>直接在需要的地方添加代码，我把它放在了<code>themes\volantis\layout\_cover\index.ejs</code>里：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.0/js/typed.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;div style=<span class="string">"text-align: center;font-weight: bold;color: #1c92c4;"</span>&gt;</span><br><span class="line">  &lt;span id="subtitle"&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span id="typed-cursor"&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">"#subtitle"</span>, &#123; strings: [<span class="string">"需要打出来的字"</span>], startDelay: <span class="number">1000</span>, typeSpeed: <span class="number">100</span>, loop: !<span class="number">0</span>, backSpeed: <span class="number">60</span>, backDelay: <span class="number">2000</span>, showCursor: !<span class="number">0</span> &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="把评论系统修改为livere"><a href="#把评论系统修改为livere" class="headerlink" title="把评论系统修改为livere"></a><font style="color: #1c92c4;">把评论系统修改为livere</font></h2><p>先去<a href="https://www.livere.com/city-demo" target="_blank" rel="noopener">livere官网</a>注册一个帐号，应该要用外网才能注册，直接去注册有可能成功，我点了好久糊里糊涂就成功了。注册成功之后点击安装，安装免费版的city就够用了。</p>
-<img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/修改Hexo博客主题/1.png" alt="livere注册" style="zoom:80%;" />
-
-<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/2.png" alt="livere注册"></p>
-<img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/修改Hexo博客主题/3.png" style="zoom:80%;" />
-
-<p>然后在<code>themes\volantis\layout\_partial</code>下面新建一个<code>livere.ejs</code>文件，文件的内容就是上面获取的代码。</p>
-<p>然后把里面的评论部分代码修改成如下：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; <span class="keyword">else</span> <span class="keyword">if</span> (widget_id == <span class="string">'comments'</span>) &#123; %&gt;</span><br><span class="line">    &lt;% <span class="keyword">if</span> (post.comments)&#123; %&gt;</span><br><span class="line">      &lt;%- partial(<span class="string">'/livere'</span>) %&gt;</span><br><span class="line">    &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">      &lt;div class="lv-container"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>此时<code>livere</code>已经添加OK了，重新部署博客然后刷新页面就可以看到博客中添加好了<code>livere</code>评论系统。</p>
-<span class='p red'>遇到的问题：</span> 
-<p>主题本身配置了很多种评论系统，包括现在这个<code>livere</code>，然后只需要配置一些参数，这里的<code>livere</code>只需要配置<code>uid</code>，然后把配置文件里面<code>comments</code>下的<code>service</code>改成<code>livere</code>就可以用这个评论系统了，但是有一个问题就是每次第一次进去评论框都会加载不出来，然后刷新一次才能加载出来，这实在是太让人抓狂(┬＿┬)，然后又去弄了一下<code>gitalk</code>，发现还是会有这个问题，无奈之下只能舍弃掉主题本身配置好的，然后自己重新配置加入新的代码，然后就成功了，不过到现在我也不知道是什么原因，毕竟我只是个小白，查到的代码看到哪里顺眼就放哪里，行就行了，不行再换个地方。</p>
-<h2 id="用不蒜子添加网站运行时间、文章阅读数"><a href="#用不蒜子添加网站运行时间、文章阅读数" class="headerlink" title="用不蒜子添加网站运行时间、文章阅读数"></a><font style="color: #1c92c4;">用不蒜子添加网站运行时间、文章阅读数</font></h2><p>主题本身已经配置好了<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>，只要在需要的地方加上代码就行了</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span>本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span>本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上面两行代码有所不同，pv是计算点击网站文章次数，uv只在进入网站的时候计算一次。添加完了之后要 <code>hexo d -g</code> 才会看到正确的数字，如果只是 <code>hexo s</code> 会看到一个很大的数字。</font></p>
+<h2 id="【1】进入yandex"><a href="#【1】进入yandex" class="headerlink" title="【1】进入yandex"></a><font color="red">【1】进入<a href="https://mail.yandex.com/" target="_blank" rel="noopener">yandex</a></font></h2><p>点击<code>Create an account</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721161707377.png" alt=""></p>
+<h2 id="【2】填信息"><a href="#【2】填信息" class="headerlink" title="【2】填信息"></a><font color="red">【2】填信息</font></h2><p>然后自己填信息，然后点击我没有手机号码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721161905170.png" alt=""></p>
+<p>然后会出现要你填验证码，而这个验证码非常反人类，我当初填了几十次都注册失败，明明填的跟他图片一模一样都是失败，后来才发现如果你fq了的话就非常容易成功了，这里说一下手机上有很多fq的app随便下一个能用的，大多数都有免费几天用，然后就注册成功了。如果不能fq的小伙伴就多试几次吧直到出现一个不分开两张图的可能就能成功了。</p>
+<h2 id="【3】注册成功"><a href="#【3】注册成功" class="headerlink" title="【3】注册成功"></a><font color="red">【3】注册成功</font></h2><p>注册成功之后不要急着去xcat注册，最好先用你自己常用的邮箱发一份邮件试试能不能用，我第一次注册的时候就用不了，后面自己去发邮件到这个yandex邮箱的时候会被退信，然后重新注册一个yandex，先用自己邮箱测试能收件成功再去xcat注册，基本上都能收到验证码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721162753338.png" alt=""></p>
+<h2 id="【4】使用xcat"><a href="#【4】使用xcat" class="headerlink" title="【4】使用xcat"></a><font color="red">【4】使用xcat</font></h2><p>xcat的注册很简单，输入邮箱输入验证码就还有其他一些个人信息基本就行了，之后如何使用xcat在那个网站上都写得很清楚，这里我简单说一下。</p>
+<h3 id="登录成功之后"><a href="#登录成功之后" class="headerlink" title="登录成功之后"></a><font color="blue">登录成功之后</font></h3><p>直接点击查看最新教程</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721163354400.png" alt=""></p>
+<p>有电脑版的和手机版的（ios要先充值￥12元获得美区账号才能下载app，或者有账号的下载app要1.99刀，所以不推荐ios用户使用，毕竟不能白嫖）。</p>
+<h3 id="电脑版：下载Clash"><a href="#电脑版：下载Clash" class="headerlink" title="电脑版：下载Clash"></a><font color="blue">电脑版：下载Clash</font></h3><p>下载下来是一个压缩文件直接解压，得到一个安装包直接右键管理员运行，然后安装 -&gt; 运行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721164152659.png" alt=""></p>
+<p>最后点击<code>Download</code>就可以了，接着按下图操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721164440039.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721164732070.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/image-20200721164933884.png" alt=""></p>
+<p>然后到这里基本可以科学上网了，想要用安卓版的自己去看我没有安卓机所以没弄，然后其他有不懂的下方评论我看到会回复或者找那个网站的客服，有兴趣的小伙伴可以研究一下别的，本次介绍到此结束。</p>
 
           
             <div class='article_footer'>
@@ -614,7 +606,7 @@
           
         
           
-            <p>本文链接：<a href=http://zpheak.tk/2020/07/18/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/>http://zpheak.tk/2020/07/18/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</a></p>
+            <p>本文链接：<a href=http://zpheak.tk/4/>http://zpheak.tk/4/</a></p>
           
         
       </blockquote>
@@ -665,10 +657,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-18T20:52:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-21T17:27:54+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>最后更新于：2020-07-18 20:52:30</p>
+    <p>最后更新于：2020-07-21 17:27:54</p>
   </a>
 </div>
 
@@ -677,7 +669,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>博客主题</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>科学上网</p></a></div>
 
 
         
@@ -695,7 +687,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/07/18/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/&title=修改Hexo博客主题 - Zephaniah.&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/4/&title=如何免费科学上网 - Zephaniah.&summary="
           
           >
           
@@ -707,7 +699,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/07/18/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/&title=修改Hexo博客主题 - Zephaniah.&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/4/&title=如何免费科学上网 - Zephaniah.&summary="
           
           >
           
@@ -719,7 +711,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/07/18/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/&title=修改Hexo博客主题 - Zephaniah.&summary="
+          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/4/&title=如何免费科学上网 - Zephaniah.&summary="
           
           >
           
@@ -755,19 +747,11 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/07/21/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>如何免费科学上网</p>
-                <p class='content'>
-写在前面：本文介绍的如何免费科学上网是通过一个网站xcat.us来实现的，这个网站注册之后有免费三天vip可以用，之后过期了就要充值，最低是￥6元一个月，详情自己进去看。那么问题来了，如何长期...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/07/16/%E5%AD%A6%E4%B9%A0git%E7%9A%84%E4%BD%BF%E7%94%A8/'>
-                <p class='title'>学习git的使用<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+              <a class='next' href='/3/'>
+                <p class='title'>修改Hexo博客主题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
-最近在B站上面学习了git的使用，现在把记录下来，视频链接：https://www.bilibili.com/video/BV1sJ411D7xN?p=1
-
-git的本地工作流程在本地的时候文...</p>
+我的博客选择的主题是Volantis，主要是把背景改成了代码雨，添加了打字特效，把评论系统从原来的valine改成了livere。第一次搭建博客主要参考了itrhx.com这位在官网看到的大佬...</p>
               </a>
             
           </div>
@@ -996,7 +980,7 @@ git的本地工作流程在本地的时候文...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码雨背景"><span class="toc-text">代码雨背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打字特效"><span class="toc-text">打字特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把评论系统修改为livere"><span class="toc-text">把评论系统修改为livere</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用不蒜子添加网站运行时间、文章阅读数"><span class="toc-text">用不蒜子添加网站运行时间、文章阅读数</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#【1】进入yandex"><span class="toc-text">【1】进入yandex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【2】填信息"><span class="toc-text">【2】填信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【3】注册成功"><span class="toc-text">【3】注册成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【4】使用xcat"><span class="toc-text">【4】使用xcat</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登录成功之后"><span class="toc-text">登录成功之后</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电脑版：下载Clash"><span class="toc-text">电脑版：下载Clash</span></a></li></ol></li></ol>
     </div>
   </section>
 
