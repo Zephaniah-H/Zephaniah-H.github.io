@@ -56,6 +56,33 @@
     
     
     <entry>
+      <title>Java学习之多线程</title>
+      <link href="/2020/5/"/>
+      <url>/2020/5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>并发和并行</p><p>并发：指两个或多个事件在同一个时间段内发生。</p><p>并行：指两个或多个事件在同一时刻发生（同时发生）</p><p><img src="https://i.loli.net/2020/07/23/JFM3aTrDkv51Xxp.png" alt="image-20200723002837239.png"></p><p><img src="https://i.loli.net/2020/07/23/2quOmEiPeBA5bVx.png" alt="image-20200723003335793.png"></p><p><img src="https://i.loli.net/2020/07/23/Ep2aPSqTX5IcDwF.png" alt="image-20200723004617396.png"></p><p><img src="https://i.loli.net/2020/07/23/c86mMBN5OV4FCZz.png" alt="image-20200723004918287.png"></p><p><img src="https://i.loli.net/2020/07/23/t3PfrnE4ZeRCU7m.png" alt="image-20200723005843143.png"></p><p><img src="https://i.loli.net/2020/07/23/dJaiPsFA4mU2uBl.png" alt="image-20200723011108179.png"></p><p><img src="https://i.loli.net/2020/07/23/85bElJoZTR4QvPy.png" alt="image-20200723011801291.png"></p><p>上图中，如果直接写mt.run()是在主线程中执行的，而mt.start()则是新开一条线程执行的。</p><p><img src="https://i.loli.net/2020/07/23/4AorNCsYg1a3Kwm.png" alt="image-20200723013039543.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习git的使用</title>
       <link href="/2020/2/"/>
       <url>/2020/2/</url>

@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Tag: git - Zephaniah.</title>
+  <title>Java学习之多线程 - Zephaniah.</title>
+  
+    <meta name="keywords" content="Java,多线程">
   
 
+  
+    <meta name="description" content="关于多线程的学习笔记。">
   
 
   <!-- feed -->
@@ -70,7 +72,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -419,9 +421,12 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">Java学习之多线程</div>
   <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -452,41 +457,28 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow floatable reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
     
       
       
-        <a title='学习git的使用' href='/2020/2/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS2.png'></a>
+        <a title='Java学习之多线程' href='/2020/5/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS5.png'></a>
       
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/2/">
-      学习git的使用
+  <h1 class="title">
+    <a href="/2020/5/">
+      Java学习之多线程
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -509,9 +501,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/github/' rel="nofollow">
+    <a href='/categories/Java/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>git/github</p>
+      <p>Java</p>
     </a>
   </div>
 
@@ -522,7 +514,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-07-16</p>
+    <p>2020-07-18</p>
   </a>
 </div>
 
@@ -535,14 +527,12 @@
           
             
               
-
-            
-          
-            
-              
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/git/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>git</p></a></div>
-
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
 
             
           
@@ -555,40 +545,254 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>git的一些学习笔记</p>
-      
-    </div>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>并发和并行</p>
+<p>并发：指两个或多个事件在同一个时间段内发生。</p>
+<p>并行：指两个或多个事件在同一时刻发生（同时发生）</p>
+<p><img src="https://i.loli.net/2020/07/23/JFM3aTrDkv51Xxp.png" alt="image-20200723002837239.png"></p>
+<p><img src="https://i.loli.net/2020/07/23/2quOmEiPeBA5bVx.png" alt="image-20200723003335793.png"></p>
+<p><img src="https://i.loli.net/2020/07/23/Ep2aPSqTX5IcDwF.png" alt="image-20200723004617396.png"></p>
+<p><img src="https://i.loli.net/2020/07/23/c86mMBN5OV4FCZz.png" alt="image-20200723004918287.png"></p>
+<p><img src="https://i.loli.net/2020/07/23/t3PfrnE4ZeRCU7m.png" alt="image-20200723005843143.png"></p>
+<p><img src="https://i.loli.net/2020/07/23/dJaiPsFA4mU2uBl.png" alt="image-20200723011108179.png"></p>
+<p><img src="https://i.loli.net/2020/07/23/85bElJoZTR4QvPy.png" alt="image-20200723011801291.png"></p>
+<p>上图中，如果直接写mt.run()是在主线程中执行的，而mt.start()则是新开一条线程执行的。</p>
+<p><img src="https://i.loli.net/2020/07/23/4AorNCsYg1a3Kwm.png" alt="image-20200723013039543.png"></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div style="text-align:center;">感谢观看！<span style="color:#FF0000;">❤️❤️❤️</span></div>
+  <div class='content'>
+    
+      <blockquote>
+	    <p>本文作者：Zephaniah.</p>
+        
+          
+            <p>版权声明：本博客所有内容除特别声明外均遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 协议，转载请注明出处！</p>
+
+          
+        
+          
+            <p>本文链接：<a href=http://zpheak.tk/2020/5/>http://zpheak.tk/2020/5/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <!--<div class='content article-entry'>
     
       
-        <div class="button readmore">
-          <a href="/2020/2/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>-->
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-23T02:15:41+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>最后更新于：2020-07-23 02:15:41</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>多线程</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/5/&title=Java学习之多线程 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS5.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/5/&title=Java学习之多线程 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS5.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/5/&title=Java学习之多线程 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS5.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACQElEQVR42u3cQXLCQAwEQP//08kLKK9GIgS59wYYe3u5qDQqrp+HrgscHBwcHHwR/ArXq+/fvX/33FfXje0XHBwcHBx8Ify4ALi5Pj2g9HV1v+Dg4ODg4JvhpwVLtRA5LUDKkOp+wcHBwcHBwa8UVG04gIODg4ODg38e3g0QwMHBwcHBwecDhbQxUR0k+HdJCjg4ODg4+D+Cp4XHp17H+wUHBwcHB18En1rVYL/a6BjbJzg4ODg4+CJ49cHdQiYdADj9vJ2kgIODg4ODfyG8OwiQvl/9AarBAzg4ODg4+GZ4+uCpQmNqILA84AcODg4ODr4InjYepgqS7vPGkxRwcHBwcPAvgncLhqkA4PRAqoMI4ODg4ODgT4B3g/50wGAqULi9Lzg4ODg4+CJ4tRCYajCkwX56EODg4ODg4BvhaQGTNiaqgwXpgZQDBXBwcHBw8C+ETw3adQP/atAQF1Lg4ODg4OCL4N0CpnuAU42M0/uDg4ODg4Nvgh9/IbyuOxgwFUyAg4ODg4NvhHcbCKeNgbThUG14lJMUcHBwcHDwL4ZXGwXTBcp0Y+P2QMHBwcHBwRfBu6sbGKSfx4UUODg4ODj4Ivi7CoX0/u8aWAAHBwcHB98MrxYs1Q3GGy0eLDg4ODg4+JPhcaM+3OBpI2Kq0QEODg4ODg4+HwD8VaMCHBwcHBwcvP6H89PA6vPAwcHBwcGfAJ8KFLoDgNNBBTg4ODg4+GZ4WmCkoLSAShsf4ODg4ODgG+FPW+Dg4ODg4AvWL6HFxVDymAEHAAAAAElFTkSuQmCC">
+          </div>
         </div>
       
     
-  </section>
-</article>
+  </div>
+</div>
 
-          </div>
+
+
         
       
-    
+    </div>
   </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
 
 
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/3/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>修改Hexo博客主题</p>
+                <p class='content'>
+我的博客选择的主题是Volantis，主要是把背景改成了代码雨，添加了打字特效，把评论系统从原来的valine改成了livere。第一次搭建博客主要参考了itrhx.com这位在官网看到的大佬...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/2/'>
+                <p class='title'>学习git的使用<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+最近在B站上面学习了git的使用，现在把记录下来，视频链接：https://www.bilibili.com/video/BV1sJ411D7xN?p=1
+
+git的本地工作流程在本地的时候文...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+      <!-- ������City�氲װ���� -->
+
+<div class="post white-box reveal comments shadow floatable">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+	<div id="lv-container" data-id="city" data-uid="MTAyMC81MTA1MC8yNzUzMg==">
+</div>
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
     
   
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -699,29 +903,6 @@
   
     
     
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>欢迎来访</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("💙欢迎来自"+returnCitySN["cname"]+"的朋友💙");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script>
-    
-      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=L9XM0kcsQI7XBqchRaT0LYGfMnvcSFT98wUzkKMQC-w&cl=ffffff&w=a"></script>
-    
-  </div>
-</section>
-  
-
-  
-    
-    
   
 
   <section class="widget category shadow floatable desktop">
@@ -784,6 +965,29 @@
 
 
   
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程"><span class="toc-text">多线程</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
