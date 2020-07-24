@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>6</title>
-      <link href="/2020/6/"/>
-      <url>/2020/6/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>如何免费科学上网</title>
       <link href="/2020/4/"/>
       <url>/2020/4/</url>
@@ -61,6 +48,33 @@
             <tag> hexo </tag>
             
             <tag> 博客主题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java学习之多线程（二）</title>
+      <link href="/2020/6/"/>
+      <url>/2020/6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><blockquote><p>写在前面：上次学到匿名内部类，接下来继续学习剩下的。文章内容是在b站学习多线程的笔记，视频地址<a href="https://www.bilibili.com/video/BV1uJ411k7wy?from=search&seid=3749706894771297867" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1uJ411k7wy?from=search&amp;seid=3749706894771297867</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 多线程 </tag>
             
         </tags>
       
