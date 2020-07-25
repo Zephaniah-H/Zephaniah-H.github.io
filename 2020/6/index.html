@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Java学习之多线程（二） - Zephaniah.</title>
+  <title>Java基础学习之多线程（二） - Zephaniah.</title>
   
     <meta name="keywords" content="Java,多线程">
   
 
   
-    <meta name="description" content="关于多线程的学习笔记。">
+    <meta name="description" content="关于多线程的学习笔记2。">
   
 
   <!-- feed -->
@@ -422,7 +422,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">Java学习之多线程（二）</div>
+  <div id="pjax-pageTitle">Java基础学习之多线程（二）</div>
   <div id="pjax-enable-cover">true</div>
   
   <div id="valine-path">none</div>
@@ -469,14 +469,14 @@
     
       
       
-        <a title='Java学习之多线程（二）' href='/2020/6/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png'></a>
+        <a title='Java基础学习之多线程（二）' href='/2020/6/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png'></a>
       
       <div class="meta" id="header-meta">
         
           
   <h1 class="title">
     <a href="/2020/6/">
-      Java学习之多线程（二）
+      Java基础学习之多线程（二）
     </a>
   </h1>
 
@@ -552,6 +552,65 @@
           <blockquote>
 <p>写在前面：上次学到匿名内部类，接下来继续学习剩下的。文章内容是在b站学习多线程的笔记，视频地址<a href="https://www.bilibili.com/video/BV1uJ411k7wy?from=search&seid=3749706894771297867" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1uJ411k7wy?from=search&amp;seid=3749706894771297867</a></p>
 </blockquote>
+<h3 id="2-7-线程安全"><a href="#2-7-线程安全" class="headerlink" title="2.7 线程安全"></a>2.7 线程安全</h3><p>Q：什么是线程安全？</p>
+<p>A：如果有多个线程在同时运行，并且这些线程都在运行同一段代码，程序每次运行的结果都和单线程运行的结果一样，就是线程安全的。</p>
+<p>下面通过一个卖票的案例来演示线程安全问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> ticket = <span class="number">100</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//一直卖票</span></span><br><span class="line">        <span class="comment">//while(true)为了避免死循环卡死电脑我改成循环100次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ticket &gt; <span class="number">0</span>) &#123;<span class="comment">//如果有票</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">10</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"正在出售第"</span> + ticket + <span class="string">"张票"</span>);<span class="comment">//卖票</span></span><br><span class="line">                ticket--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Ticket ticket = <span class="keyword">new</span> Ticket();</span><br><span class="line">        <span class="keyword">new</span> Thread(ticket).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(ticket).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(ticket).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20200724165311618.png" alt=""></p>
+<p>发现程序出现了两个问题：</p>
+<p>①卖出了相同的票数（如票6）。</p>
+<p>②卖出了不存在的票（如票0）。</p>
+<p>这种几个线程票数不同步的问题称为<strong>线程不安全</strong>。 </p>
+<p>线程安全问题都是由全局变量及静态变量引起的。若每个线程中对全局变量（如示例中的ticket变量）、静态变量只有读操作，而无写 </p>
+<p>操作（原子操作），一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步， </p>
+<p>否则的话就可能影响线程安全。 </p>
+<h3 id="2-8-线程同步"><a href="#2-8-线程同步" class="headerlink" title="2.8 线程同步"></a>2.8 线程同步</h3><p>当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。</p>
+<p>要解决上述多线程并发访问同一个资源的安全性问题：也就是解决重复票与不存在票问题，Java中提供了同步机制（synchronized）来解决。</p>
+<p>根据案例简述： </p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20200724170148705.png" alt=""></p>
+<p>为了保证每个线程都能正常执行原子操作,Java引入了线程同步机制。 </p>
+<p>那么怎么去使用呢？有三种方式完成同步操作：</p>
+<p>​    ①同步代码块</p>
+<p>​    ②同步方法（静态同步方法）</p>
+<p>​    ③锁机制</p>
+<h4 id="2-8-1-同步代码块"><a href="#2-8-1-同步代码块" class="headerlink" title="2.8.1 同步代码块"></a>2.8.1 同步代码块</h4><p><code>synchronized</code>关键字可以用于方法中的某个区块中，表示只对这个区块的资源实行互斥访问。</p>
+<ul>
+<li>格式：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(同步锁)&#123;</span><br><span class="line">	需要同步操作的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同步锁：</li>
+</ul>
+<p>对象的同步锁只是一个概念，可以想象为在对象上标记了一个锁。</p>
+<p>①锁对象可以是任意类型。</p>
+<p>②多个线程对象要使用同一把锁。</p>
+<p>注意:在任何时候,最多允许一个线程拥有同步锁,谁拿到锁就进入代码块,其他的线程只能在外等着 </p>
+<p>(BLOCKED)。</p>
+<p>实例代码（买票）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddSynTicket</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> ticket = <span class="number">100</span>;</span><br><span class="line">    Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//一直卖票</span></span><br><span class="line">        <span class="comment">//while(true)为了避免死循环卡死电脑我改成for循环100次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (obj)&#123;</span><br><span class="line">                <span class="keyword">if</span> (ticket &gt; <span class="number">0</span>) &#123;<span class="comment">//如果有票</span></span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">10</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">"在出售第"</span> + ticket + <span class="string">"张票"</span>);<span class="comment">//卖票</span></span><br><span class="line">                    ticket--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        AddSynTicket addSynTicket = <span class="keyword">new</span> AddSynTicket();</span><br><span class="line">        <span class="keyword">new</span> Thread(addSynTicket).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(addSynTicket).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(addSynTicket).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/20200725103722.png" alt=""></p>
+<p>可以看到线程问题已被解决。</p>
+<h4 id="2-8-2-同步方法（静态同步方法）"><a href="#2-8-2-同步方法（静态同步方法）" class="headerlink" title="2.8.2 同步方法（静态同步方法）"></a>2.8.2 同步方法（静态同步方法）</h4><p>Q：什么叫同步方法？</p>
+<p>A：使用<code>synchronized</code>修饰的方法就是同步方法，保证A线程执行该方法的时候，其他线程只能在方法外面等着。</p>
+<p><strong>格式：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">	可能会产生线程安全问题的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Q：同步锁是谁？</p>
+<p>A：对于非static方法，同步锁就是<code>this</code>；对于static方法，同步锁就是我们使用当前方法所在类的字节码对象（<code>类名.class</code>）。</p>
+<p>实例代码（同步方法）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SynMethTicket</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> ticket = <span class="number">100</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//一直卖票</span></span><br><span class="line">        <span class="comment">//while(true)为了避免死循环卡死电脑我改成循环100次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            sellTicket();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">sellTicket</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"同步锁2"</span> +<span class="string">" "</span>+ <span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">if</span> (ticket &gt; <span class="number">0</span>) &#123;<span class="comment">//如果有票</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">10</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"正在出售第(同步方法)"</span> + ticket + <span class="string">"张票"</span>);<span class="comment">//卖票</span></span><br><span class="line">            ticket--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SynMethTicket s = <span class="keyword">new</span> SynMethTicket();</span><br><span class="line">        System.out.println(<span class="string">"同步锁1"</span> + <span class="string">" "</span> + s);</span><br><span class="line">        <span class="keyword">new</span> Thread(s).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(s).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(s).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/20200725110253.png" alt=""></p>
+<p>图中可以看出线程问题已解决，而且同步锁<code>this</code>就是<code>new SynMethTicket()</code>。</p>
+<p>示例代码（静态同步方法）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
           
             <div class='article_footer'>
@@ -641,10 +700,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-24T15:46:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-25T13:08:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>最后更新于：2020-07-24 15:46:12</p>
+    <p>最后更新于：2020-07-25 13:08:03</p>
   </a>
 </div>
 
@@ -671,7 +730,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/6/&title=Java学习之多线程（二） - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/6/&title=Java基础学习之多线程（二） - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png&summary="
           
           >
           
@@ -683,7 +742,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/6/&title=Java学习之多线程（二） - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/6/&title=Java基础学习之多线程（二） - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png&summary="
           
           >
           
@@ -695,7 +754,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/6/&title=Java学习之多线程（二） - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png&summary="
+          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/6/&title=Java基础学习之多线程（二） - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS6.png&summary="
           
           >
           
@@ -964,6 +1023,20 @@ git的本地工作流程在本地的时候文...</p>
     
 
 
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-线程安全"><span class="toc-text">2.7 线程安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-线程同步"><span class="toc-text">2.8 线程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8-1-同步代码块"><span class="toc-text">2.8.1 同步代码块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8-2-同步方法（静态同步方法）"><span class="toc-text">2.8.2 同步方法（静态同步方法）</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
 
   
