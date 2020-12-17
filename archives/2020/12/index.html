@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,13 +18,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>修改Hexo博客主题 - Zephaniah.</title>
-  
-    <meta name="keywords" content="hexo,博客主题">
+  <title>Archive: 2020/12 - Zephaniah.</title>
   
 
-  
-    <meta name="description" content="其实也没改什么，但是也遇到了挺多问题，浪费了挺多时间(┬＿┬)">
   
 
   <!-- feed -->
@@ -72,7 +70,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -421,12 +419,9 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">修改Hexo博客主题</div>
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
-  
-  <div id="valine-path">none</div>
-  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -458,27 +453,38 @@
       
 
 <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list ">
+    
       
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow floatable reveal ">
+  
 
 
   <section class='meta'>
     
       
       
-        <a title='修改Hexo博客主题' href='/2020/3/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png'></a>
+        <a title='公司二三事之挂载磁盘' href='/2020/7/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS7.png'></a>
       
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2020/3/">
-      修改Hexo博客主题
+  <h2 class="title">
+    <a href="/2020/7/">
+      公司二三事之挂载磁盘
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -501,9 +507,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/personal-blog/' rel="nofollow">
+    <a href='/categories/Linux/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>personal blog</p>
+      <p>Linux</p>
     </a>
   </div>
 
@@ -514,7 +520,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-07-18</p>
+    <p>2020-12-16</p>
   </a>
 </div>
 
@@ -527,12 +533,14 @@
           
             
               
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>工作</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8C%82%E8%BD%BD/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>挂载</p></a></div>
+
 
             
           
@@ -545,269 +553,39 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <blockquote>
-<p>我的博客选择的主题是<a href="https://volantis.js.org/" target="_blank" rel="noopener">Volantis</a>，主要是把背景改成了代码雨，添加了打字特效，把评论系统从原来的valine改成了livere。第一次搭建博客主要参考了<a href="https://www.itrhx.com/" target="_blank" rel="noopener">itrhx.com</a>这位在官网看到的大佬博主。</p>
-</blockquote>
-<h2 id="代码雨背景"><a href="#代码雨背景" class="headerlink" title="代码雨背景"></a><font style="color: #1c92c4;">代码雨背景</font></h2><p>在博客上面添加代码雨背景只需要把原来的背景删掉，然后在<code>themes\volantis\layout.ejs</code>这个文件里面的body前面添加以下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"1920"</span> <span class="attr">height</span>=<span class="string">"1080"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.1/js/coderain.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>src里面的地址是代码雨的实现代码，我把它放在github上面用cdn加速访问了。</p>
-<p>然后还要在<code>themes\volantis\source\css\_layout\main.styl</code>的末尾添加：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="打字特效"><a href="#打字特效" class="headerlink" title="打字特效"></a><font style="color: #1c92c4;">打字特效</font></h2><p>直接在需要的地方添加代码，我把它放在了<code>themes\volantis\layout\_cover\index.ejs</code>里：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.0/js/typed.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;div style=<span class="string">"text-align: center;font-weight: bold;color: #1c92c4;"</span>&gt;</span><br><span class="line">  &lt;span id="subtitle"&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span id="typed-cursor"&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">"#subtitle"</span>, &#123; strings: [<span class="string">"需要打出来的字"</span>], startDelay: <span class="number">1000</span>, typeSpeed: <span class="number">100</span>, loop: !<span class="number">0</span>, backSpeed: <span class="number">60</span>, backDelay: <span class="number">2000</span>, showCursor: !<span class="number">0</span> &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="把评论系统修改为livere"><a href="#把评论系统修改为livere" class="headerlink" title="把评论系统修改为livere"></a><font style="color: #1c92c4;">把评论系统修改为livere</font></h2><p>先去<a href="https://www.livere.com/city-demo" target="_blank" rel="noopener">livere官网</a>注册一个帐号，应该要用外网才能注册，直接去注册有可能成功，我点了好久糊里糊涂就成功了。注册成功之后点击安装，安装免费版的city就够用了。</p>
-<img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/修改Hexo博客主题/1.png" alt="livere注册" style="zoom:80%;" />
-
-<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/2.png" alt="livere注册"></p>
-<img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/修改Hexo博客主题/3.png" style="zoom:80%;" />
-
-<p>然后在<code>themes\volantis\layout\_partial</code>下面新建一个<code>livere.ejs</code>文件，文件的内容就是上面获取的代码。</p>
-<p>然后把里面的评论部分代码修改成如下：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; <span class="keyword">else</span> <span class="keyword">if</span> (widget_id == <span class="string">'comments'</span>) &#123; %&gt;</span><br><span class="line">    &lt;% <span class="keyword">if</span> (post.comments)&#123; %&gt;</span><br><span class="line">      &lt;%- partial(<span class="string">'/livere'</span>) %&gt;</span><br><span class="line">    &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">      &lt;div class="lv-container"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>此时<code>livere</code>已经添加OK了，重新部署博客然后刷新页面就可以看到博客中添加好了<code>livere</code>评论系统。</p>
-<span class='p red'>遇到的问题：</span> 
-<p>主题本身配置了很多种评论系统，包括现在这个<code>livere</code>，然后只需要配置一些参数，这里的<code>livere</code>只需要配置<code>uid</code>，然后把配置文件里面<code>comments</code>下的<code>service</code>改成<code>livere</code>就可以用这个评论系统了，但是有一个问题就是每次第一次进去评论框都会加载不出来，然后刷新一次才能加载出来，这实在是太让人抓狂(┬＿┬)，然后又去弄了一下<code>gitalk</code>，发现还是会有这个问题，无奈之下只能舍弃掉主题本身配置好的，然后自己重新配置加入新的代码，然后就成功了，不过到现在我也不知道是什么原因，毕竟我只是个小白，查到的代码看到哪里顺眼就放哪里，行就行了，不行再换个地方。</p>
-<h2 id="用不蒜子添加网站运行时间、文章阅读数"><a href="#用不蒜子添加网站运行时间、文章阅读数" class="headerlink" title="用不蒜子添加网站运行时间、文章阅读数"></a><font style="color: #1c92c4;">用不蒜子添加网站运行时间、文章阅读数</font></h2><p>主题本身已经配置好了<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>，只要在需要的地方加上代码就行了</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span>本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span>本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上面两行代码有所不同，pv是计算点击网站文章次数，uv只在进入网站的时候计算一次。添加完了之后要 <code>hexo d -g</code> 才会看到正确的数字，如果只是 <code>hexo s</code> 会看到一个很大的数字。</font></p>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div style="text-align:center;">感谢观看！<span style="color:#FF0000;">❤️❤️❤️</span></div>
-  <div class='content'>
-    
-      <blockquote>
-	    <p>本文作者：Zephaniah.</p>
-        
-          
-            <p>版权声明：本博客所有内容除特别声明外均遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 协议，转载请注明出处！</p>
-
-          
-        
-          
-            <p>本文链接：<a href=http://zpheak.tk/2020/3/>http://zpheak.tk/2020/3/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <!--<div class='content article-entry'>
-    
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-  </div>-->
-</section>
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-22T20:12:32+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>最后更新于：2020-07-22 20:12:32</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>博客主题</p></a></div>
-
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/3/&title=修改Hexo博客主题 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/3/&title=修改Hexo博客主题 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/3/&title=修改Hexo博客主题 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRElEQVR42u3cS27DMAwFwNz/0u0BisD8yU3o0S5FLGvYzSsp9PXz0PUCBwcHBwdfBH8V17vn/7wouM+757L7XZ4XHBwcHBx8ITwcAC7gVwWKArMFCZ8XHBwcHBx8MbwKiD4fLWT2c/S84ODg4ODg4PlGxNX3owUDBwcHBwcHPx9gqoElWiBwcHBwcHDw8w396iDi1AACHBwcHBx8I7x7we/uzx9zsxEcHBwcHPwf4d01fYEgu0/6vODg4ODg4Ivgdw/uq0EkOoC4fC84ODg4OPhC+FRQ6IKqhWoPFMDBwcHBwb8QXm0wdCHRgX+3wZHuwICDg4ODg38RPNtY6B781D7hwoGDg4ODgy+CZ4PC9MCh+r7y98DBwcHBwRfDqwXIBp1ogaoX/i4vBoCDg4ODgy+CZxsF3QNkCxL9fLkPODg4ODj4Ing1SEwVohuY0o0NcHBwcHDwB8K7A4Hq+8b3AQcHBwcHXwTP/qGfbVh0A0/1FwAODg4ODv4E+OmAEW1ATA04whf8wMHBwcHBF8CnBgTVAUD259HnwMHBwcHBnwTPXsTLBqAspLvAwcHBwcGfBO82AqYCUBqSLAQ4ODg4OPgmeDcgZIPEVOOi2pAABwcHBwffCO8GlmogmQow4fODg4ODg4MvhmcPWj3wVLBJByhwcHBwcHDwsYt41cZC+SIDODg4ODg4+Ng/0Kk2GsoFAwcHBwcHXww/1TA4PZC4/WIAODg4ODj4B8GrjfpTA//pgoKDg4ODg2+EP22Bg4ODg4MvWL+BFEIMT5Bo9gAAAABJRU5ErkJggg==">
-          </div>
-        </div>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <p>这篇文章是关于因为重启服务器导致之前挂载的磁盘掉了，现在要重新挂起来，但是在这其中发生了许多事......</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/7/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/2020/4/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>如何免费科学上网</p>
-                <p class='content'>
-写在前面：本文介绍的如何免费科学上网是通过一个网站xcat.us来实现的，这个网站注册之后有免费三天vip可以用，之后过期了就要充值，最低是￥6元一个月，详情自己进去看。那么问题来了，如何长期...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/6/'>
-                <p class='title'>Java基础学习之多线程（二）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>
-写在前面：上次学到匿名内部类，接下来继续学习剩下的。文章内容是在b站学习多线程的笔记，视频地址https://www.bilibili.com/video/BV1uJ411k7wy?from=...</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
+      
+    
+  </section>
   
-
-  
     
-      <!-- ������City�氲װ���� -->
-
-<div class="post white-box reveal comments shadow floatable">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
-	<div id="lv-container" data-id="city" data-uid="MTAyMC81MTA1MC8yNzUzMg==">
-</div>
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
-</div>
-<!-- City�氲װ��������� -->
     
+
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
+	
 </div>
 <aside class='l_side'>
   
@@ -918,6 +696,29 @@
   
     
     
+
+<section class="widget text shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>欢迎来访</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("💙欢迎来自"+returnCitySN["cname"]+"的朋友💙");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script>
+    
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=L9XM0kcsQI7XBqchRaT0LYGfMnvcSFT98wUzkKMQC-w&cl=ffffff&w=a"></script>
+    
+  </div>
+</section>
+  
+
+  
+    
+    
   
 
   <section class="widget category shadow floatable desktop">
@@ -988,32 +789,17 @@
 
   
 
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码雨背景"><span class="toc-text">代码雨背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打字特效"><span class="toc-text">打字特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把评论系统修改为livere"><span class="toc-text">把评论系统修改为livere</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用不蒜子添加网站运行时间、文章阅读数"><span class="toc-text">用不蒜子添加网站运行时间、文章阅读数</span></a></li></ol>
-    </div>
-  </section>
-
-
-  
-
 
 </aside>
 
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>

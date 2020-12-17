@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>修改Hexo博客主题 - Zephaniah.</title>
+  <title>公司二三事之挂载磁盘 - Zephaniah.</title>
   
-    <meta name="keywords" content="hexo,博客主题">
+    <meta name="keywords" content="工作,Linux,挂载">
   
 
   
-    <meta name="description" content="其实也没改什么，但是也遇到了挺多问题，浪费了挺多时间(┬＿┬)">
+    <meta name="description" content="这篇文章是关于因为重启服务器导致之前挂载的磁盘掉了，现在要重新挂起来，但是在这其中发生了许多事......">
   
 
   <!-- feed -->
@@ -422,7 +422,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">修改Hexo博客主题</div>
+  <div id="pjax-pageTitle">公司二三事之挂载磁盘</div>
   <div id="pjax-enable-cover">true</div>
   
   <div id="valine-path">none</div>
@@ -469,14 +469,14 @@
     
       
       
-        <a title='修改Hexo博客主题' href='/2020/3/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png'></a>
+        <a title='公司二三事之挂载磁盘' href='/2020/7/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS7.png'></a>
       
       <div class="meta" id="header-meta">
         
           
   <h1 class="title">
-    <a href="/2020/3/">
-      修改Hexo博客主题
+    <a href="/2020/7/">
+      公司二三事之挂载磁盘
     </a>
   </h1>
 
@@ -501,9 +501,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/personal-blog/' rel="nofollow">
+    <a href='/categories/Linux/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>personal blog</p>
+      <p>Linux</p>
     </a>
   </div>
 
@@ -514,7 +514,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-07-18</p>
+    <p>2020-12-16</p>
   </a>
 </div>
 
@@ -550,34 +550,30 @@
           
           
           <blockquote>
-<p>我的博客选择的主题是<a href="https://volantis.js.org/" target="_blank" rel="noopener">Volantis</a>，主要是把背景改成了代码雨，添加了打字特效，把评论系统从原来的valine改成了livere。第一次搭建博客主要参考了<a href="https://www.itrhx.com/" target="_blank" rel="noopener">itrhx.com</a>这位在官网看到的大佬博主。</p>
+<p>写在前面：本文建议与下面两篇文章一起食用。<a href="https://www.cnblogs.com/kl876435928/p/7819565.html、https://xiejun.blog.csdn.net/article/details/52719171?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.control" target="_blank" rel="noopener">https://www.cnblogs.com/kl876435928/p/7819565.html、https://xiejun.blog.csdn.net/article/details/52719171?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.control</a></p>
 </blockquote>
-<h2 id="代码雨背景"><a href="#代码雨背景" class="headerlink" title="代码雨背景"></a><font style="color: #1c92c4;">代码雨背景</font></h2><p>在博客上面添加代码雨背景只需要把原来的背景删掉，然后在<code>themes\volantis\layout.ejs</code>这个文件里面的body前面添加以下代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"1920"</span> <span class="attr">height</span>=<span class="string">"1080"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.1/js/coderain.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>今天公司的psql数据库启动不了，是因为放数据的文件夹没有挂载磁盘<br>然后我就去挂载了<br><code>mount /dev/sda4 /nfs</code><br>然后报错：要指定filesystem type<br><code>df -Th</code> 列出所有已挂载的磁盘包括文件系统类型（-T）<br>发现是ext4的<br><code>mount -t ext4 /dev/sda4 /nfs</code><br>还是报错：<img src="http://loc.dingtalk.com/QzpcVXNlcnNcQWRtaW5pc3RyYXRvclxBcHBEYXRhXFJvYW1pbmdcRGluZ1RhbGtcNzY4MTczODg0X3YyXEltYWdlRmlsZXNcMTYwNzkxOTQwMjg3M18zQ0Y4NkRDRS0wRURBLTQ3NTktQTcyMC1DQkYzMzA2MzE1RDIucG5n" alt="img"></p>
+<p><code>dmesg | tail</code> </p>
+<p>显示unable to read superblock</p>
+<p><code>dumpe2fs /dev/sda4|more</code></p>
+<p>显示找不到有效的文件系统超级块.</p>
+<p>首先要找到superblock备份的几个位置，这需要利用mke2fs这个命令</p>
+<p><code>mke2fs：create an ext2/ext3/ext4 filesystem</code></p>
+<p>利用mke2fs这个命令 mke2fs -n 设备名,为了不引起歧义，所以这里直接复制了原文解释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-n   Causes mke2fs to not actually create a filesystem, but display what it would do if it were to create</span><br><span class="line">        a filesystem. This can be used to determine the location of the backup superblocks for a particular</span><br><span class="line">        filesystem, so long as the mke2fs parameters that were passed when the filesystem was originally</span><br><span class="line">        created are used again. (With the -n option added, of course!)</span><br></pre></td></tr></table></figure>
 
-<p>src里面的地址是代码雨的实现代码，我把它放在github上面用cdn加速访问了。</p>
-<p>然后还要在<code>themes\volantis\source\css\_layout\main.styl</code>的末尾添加：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单来说就是接了-n 参数 ，mke2fs 不是真的在设备上创建文件系统，它只是模拟这个过程并显示给你看。让你明白它究竟做了那些事。</p>
+<p><code>mke2fs -n /dev/sda4</code>  //mke2fs其实是格式化分区，但是-n就是模拟的意思，这条命令的意思就是模拟一下格式化<code>/dev/sda4</code>这个磁盘会发生什么事。</p>
+<p>但是却失败了</p>
+<p>报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mke2fs: inode_size (128) * inodes_count (0) too big for a</span><br><span class="line"> </span><br><span class="line">filesystem with 0 blocks, specify higher inode_ratio (-i)</span><br><span class="line"> </span><br><span class="line">or lower inode count (-N).</span><br></pre></td></tr></table></figure>
 
-<h2 id="打字特效"><a href="#打字特效" class="headerlink" title="打字特效"></a><font style="color: #1c92c4;">打字特效</font></h2><p>直接在需要的地方添加代码，我把它放在了<code>themes\volantis\layout\_cover\index.ejs</code>里：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog@1.0/js/typed.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;div style=<span class="string">"text-align: center;font-weight: bold;color: #1c92c4;"</span>&gt;</span><br><span class="line">  &lt;span id="subtitle"&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span id="typed-cursor"&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> typed = <span class="keyword">new</span> Typed(<span class="string">"#subtitle"</span>, &#123; strings: [<span class="string">"需要打出来的字"</span>], startDelay: <span class="number">1000</span>, typeSpeed: <span class="number">100</span>, loop: !<span class="number">0</span>, backSpeed: <span class="number">60</span>, backDelay: <span class="number">2000</span>, showCursor: !<span class="number">0</span> &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="把评论系统修改为livere"><a href="#把评论系统修改为livere" class="headerlink" title="把评论系统修改为livere"></a><font style="color: #1c92c4;">把评论系统修改为livere</font></h2><p>先去<a href="https://www.livere.com/city-demo" target="_blank" rel="noopener">livere官网</a>注册一个帐号，应该要用外网才能注册，直接去注册有可能成功，我点了好久糊里糊涂就成功了。注册成功之后点击安装，安装免费版的city就够用了。</p>
-<img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/修改Hexo博客主题/1.png" alt="livere注册" style="zoom:80%;" />
-
-<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/%E4%BF%AE%E6%94%B9Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/2.png" alt="livere注册"></p>
-<img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/修改Hexo博客主题/3.png" style="zoom:80%;" />
-
-<p>然后在<code>themes\volantis\layout\_partial</code>下面新建一个<code>livere.ejs</code>文件，文件的内容就是上面获取的代码。</p>
-<p>然后把里面的评论部分代码修改成如下：</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; <span class="keyword">else</span> <span class="keyword">if</span> (widget_id == <span class="string">'comments'</span>) &#123; %&gt;</span><br><span class="line">    &lt;% <span class="keyword">if</span> (post.comments)&#123; %&gt;</span><br><span class="line">      &lt;%- partial(<span class="string">'/livere'</span>) %&gt;</span><br><span class="line">    &lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">      &lt;div class="lv-container"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>此时<code>livere</code>已经添加OK了，重新部署博客然后刷新页面就可以看到博客中添加好了<code>livere</code>评论系统。</p>
-<span class='p red'>遇到的问题：</span> 
-<p>主题本身配置了很多种评论系统，包括现在这个<code>livere</code>，然后只需要配置一些参数，这里的<code>livere</code>只需要配置<code>uid</code>，然后把配置文件里面<code>comments</code>下的<code>service</code>改成<code>livere</code>就可以用这个评论系统了，但是有一个问题就是每次第一次进去评论框都会加载不出来，然后刷新一次才能加载出来，这实在是太让人抓狂(┬＿┬)，然后又去弄了一下<code>gitalk</code>，发现还是会有这个问题，无奈之下只能舍弃掉主题本身配置好的，然后自己重新配置加入新的代码，然后就成功了，不过到现在我也不知道是什么原因，毕竟我只是个小白，查到的代码看到哪里顺眼就放哪里，行就行了，不行再换个地方。</p>
-<h2 id="用不蒜子添加网站运行时间、文章阅读数"><a href="#用不蒜子添加网站运行时间、文章阅读数" class="headerlink" title="用不蒜子添加网站运行时间、文章阅读数"></a><font style="color: #1c92c4;">用不蒜子添加网站运行时间、文章阅读数</font></h2><p>主题本身已经配置好了<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>，只要在需要的地方加上代码就行了</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span>本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span>本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><font color=red>注意：上面两行代码有所不同，pv是计算点击网站文章次数，uv只在进入网站的时候计算一次。添加完了之后要 <code>hexo d -g</code> 才会看到正确的数字，如果只是 <code>hexo s</code> 会看到一个很大的数字。</font></p>
+<p>出现这个错误意味着正在格式化一个扩展分区，直接格式化扩展分区是不允许的，只能格式化主分区和逻辑分区。那么应该如何格式化一个扩展分区呢？我们要么删除扩展分区创建一个主分区，要么在扩展分区上创建逻辑分区。</p>
+<p>于是后面的事情都不用干了。</p>
+<p>线索到这儿断了，又要去寻求别的办法了。</p>
+<p>因为判断出是因为重启服务器导致之前挂载的磁盘掉了，现在本服务器的唯一一个没有被挂载的磁盘<code>/dev/sda4</code>其实不是真的没有被挂载，它是一个扩展分区，它上面创建了一个逻辑分区：<code>/dev/sda5</code>，而<code>sda5</code>已经被挂载在根目录/了，所以上面做的事情都是徒劳，但是对于磁盘的挂载有了一点认识，也不算徒劳。</p>
+<p>然后又想到，既然不是在本服务器，会不会是在其他服务器上面呢？</p>
+<p>未完待续……</p>
 
           
             <div class='article_footer'>
@@ -616,7 +612,7 @@
           
         
           
-            <p>本文链接：<a href=http://zpheak.tk/2020/3/>http://zpheak.tk/2020/3/</a></p>
+            <p>本文链接：<a href=http://zpheak.tk/2020/7/>http://zpheak.tk/2020/7/</a></p>
           
         
       </blockquote>
@@ -667,10 +663,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-22T20:12:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-17T11:02:42+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>最后更新于：2020-07-22 20:12:32</p>
+    <p>最后更新于：2020-12-17 11:02:42</p>
   </a>
 </div>
 
@@ -679,7 +675,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>博客主题</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B7%A5%E4%BD%9C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>工作</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8C%82%E8%BD%BD/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>挂载</p></a></div>
 
 
         
@@ -697,7 +693,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/3/&title=修改Hexo博客主题 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/7/&title=公司二三事之挂载磁盘 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS7.png&summary="
           
           >
           
@@ -709,7 +705,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/3/&title=修改Hexo博客主题 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/7/&title=公司二三事之挂载磁盘 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS7.png&summary="
           
           >
           
@@ -721,7 +717,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/3/&title=修改Hexo博客主题 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS3.png&summary="
+          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/7/&title=公司二三事之挂载磁盘 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS7.png&summary="
           
           >
           
@@ -735,7 +731,7 @@
         <div class='hoverbox'>
           <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRElEQVR42u3cS27DMAwFwNz/0u0BisD8yU3o0S5FLGvYzSsp9PXz0PUCBwcHBwdfBH8V17vn/7wouM+757L7XZ4XHBwcHBx8ITwcAC7gVwWKArMFCZ8XHBwcHBx8MbwKiD4fLWT2c/S84ODg4ODg4PlGxNX3owUDBwcHBwcHPx9gqoElWiBwcHBwcHDw8w396iDi1AACHBwcHBx8I7x7we/uzx9zsxEcHBwcHPwf4d01fYEgu0/6vODg4ODg4Ivgdw/uq0EkOoC4fC84ODg4OPhC+FRQ6IKqhWoPFMDBwcHBwb8QXm0wdCHRgX+3wZHuwICDg4ODg38RPNtY6B781D7hwoGDg4ODgy+CZ4PC9MCh+r7y98DBwcHBwRfDqwXIBp1ogaoX/i4vBoCDg4ODgy+CZxsF3QNkCxL9fLkPODg4ODj4Ing1SEwVohuY0o0NcHBwcHDwB8K7A4Hq+8b3AQcHBwcHXwTP/qGfbVh0A0/1FwAODg4ODv4E+OmAEW1ATA04whf8wMHBwcHBF8CnBgTVAUD259HnwMHBwcHBnwTPXsTLBqAspLvAwcHBwcGfBO82AqYCUBqSLAQ4ODg4OPgmeDcgZIPEVOOi2pAABwcHBwffCO8GlmogmQow4fODg4ODg4MvhmcPWj3wVLBJByhwcHBwcHDwsYt41cZC+SIDODg4ODg4+Ng/0Kk2GsoFAwcHBwcHXww/1TA4PZC4/WIAODg4ODj4B8GrjfpTA//pgoKDg4ODg2+EP22Bg4ODg4MvWL+BFEIMT5Bo9gAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRklEQVR42u3bSW5CMQwA0H//S7f7ViieqKjzsgNl8Asbyw7P16XjAQcHBwcHXwR/iuO0/teBwXk/50f3CccLDg4ODg6+EB5OAF7AXwUWhUTjaccLDg4ODg6+GB5NWKKALKT6ORovODg4ODg4eD3hmCpogIODg4ODg88nMNXAT/uBg4ODg4ODzzcUsolJtsH/sZ0UcHBwcHDwD4J3H/j99eexB37g4ODg4OD/GN4d2QQkuy6bsBzjBQcHBwcHXwSfaty/qxCRbUAczwUHBwcHB18EjzYGsvOroOp+6YYCODg4ODj4Ing3wGxjIPvgILvPy/3AwcHBwcEvgk8dmG1QRL9PXxw4ODg4OPhF8G5CU20IZC80PA8cHBwcHHwRPFqgzwYWnT+1b3g9ODg4ODj4RfBuA6GagGQbFOE4wcHBwcHBF8KnAo429qcSn3TCBQ4ODg4OvhCeTWC6jf9qwaO9Dzg4ODg4+CL4KcBqQN0GfjcecHBwcHDwG+BThftuAWIqITpePDg4ODg4+CJ4dcMnOE6JRfb76DpwcHBwcPCb4FVY92Fg97x2AgMODg4ODr4A3i0ETK1PQ7I/CDg4ODg4+CL4uxKVbkM/u1/4HHBwcHBw8IXw6YRjChJNYMLxg4ODg4ODL4ZnA313QWO6sQAODg4ODg4ef4gXbQRkCwvVBAccHBwcHBx87g961UJD+cLAwcHBwcEXw6sFg2pCM3Vxf/4wABwcHBwc/IPg0w/8phr63QcG4ODg4ODgm+G3DXBwcHBw8AXjG0/PxzKmb0YJAAAAAElFTkSuQmCC">
           </div>
         </div>
       
@@ -755,17 +751,11 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/4/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>如何免费科学上网</p>
+            
+              <a class='next' href='/2020/4/'>
+                <p class='title'>如何免费科学上网<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
 写在前面：本文介绍的如何免费科学上网是通过一个网站xcat.us来实现的，这个网站注册之后有免费三天vip可以用，之后过期了就要充值，最低是￥6元一个月，详情自己进去看。那么问题来了，如何长期...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/6/'>
-                <p class='title'>Java基础学习之多线程（二）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>
-写在前面：上次学到匿名内部类，接下来继续学习剩下的。文章内容是在b站学习多线程的笔记，视频地址https://www.bilibili.com/video/BV1uJ411k7wy?from=...</p>
               </a>
             
           </div>
@@ -993,20 +983,6 @@
     
 
 
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码雨背景"><span class="toc-text">代码雨背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打字特效"><span class="toc-text">打字特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把评论系统修改为livere"><span class="toc-text">把评论系统修改为livere</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用不蒜子添加网站运行时间、文章阅读数"><span class="toc-text">用不蒜子添加网站运行时间、文章阅读数</span></a></li></ol>
-    </div>
-  </section>
 
 
   
