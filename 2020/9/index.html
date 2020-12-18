@@ -552,9 +552,9 @@
           <blockquote>
 <p>转载自<a href="https://www.cnblogs.com/blueskyli/p/9932017.html" target="_blank" rel="noopener">Java中equals和==的区别</a></p>
 </blockquote>
-<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p><strong>== 比较的是\</strong>变量(栈)内存中存放的对象的(堆)内存地址，*<em>用来判断两个对象的地址是否相同，即是否是指相同一个对象。比较的是真正意义上的指针操作。*</em></p>
-<p><strong><em>\</em>equals用来比较的是两个对象的内容是否相等，由于所有的类都是继承自java.lang.Object类的，所以适用于所有对象，如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断。**</strong></p>
-<p>java中的数据类型可以分为两类：</p>
+<h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><p>== 比较的是变量(栈)内存中存放的对象的(堆)内存地址，用来判断两个对象的地址是否相同，即是否是指相同一个对象。比较的是真正意义上的指针操作。</p>
+<p>equals用来比较的是两个对象的内容是否相等，由于所有的类都是继承自java.lang.Object类的，所以适用于所有对象，如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断。</p>
+<p>java中的数据类型可以分为<code>两类</code>：</p>
 <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>byte,short,char,int,long,float,double,boolean</p>
 <p>基本数据类型之间的比较需要用双等号（==），因为他们比较的是值</p>
 <h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><p>接口、类、数组等非基本数据类型</p>
@@ -666,10 +666,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T00:11:35+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T00:20:00+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>最后更新于：2020-12-19 00:11:35</p>
+    <p>最后更新于：2020-12-19 00:20:00</p>
   </a>
 </div>
 
@@ -1002,7 +1002,7 @@ A.文件分为文本文件和二进制文件，计算机只认识二进制，所
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景介绍"><span class="toc-text">背景介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用数据类型"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equals-方法介绍"><span class="toc-text">equals()方法介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类的equals-方法"><span class="toc-text">String类的equals()方法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景介绍"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用数据类型"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#equals-方法介绍"><span class="toc-text">equals()方法介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类的equals-方法"><span class="toc-text">String类的equals()方法</span></a>
     </div>
   </section>
 
