@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>8</title>
+      <link href="/2020/8/"/>
+      <url>/2020/8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-对于文件的一些描述"><a href="#1-对于文件的一些描述" class="headerlink" title="1.对于文件的一些描述"></a>1.对于文件的一些描述</h3><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/file.png" alt=""></p><p><code>A.文件分为文本文件和二进制文件，计算机只认识二进制，所以实际上都是二进制的不同解释方式。文本文件是以不同编码格式显示的字符，例如Ascii、Unicode等，window中文本文件的后缀名有&quot;.txt&quot;,&quot;.log&quot;,各种编程语言的源码文件等；二进制文件就是用文本文档打开是看不懂乱码，只要能用文本打开的文件都可以算是文本文件，只是显示的结果不是你想要的，二进制文件只有用特殊的应用才能读懂的文件，例如&quot;.png&quot;,&quot;.bmp&quot;等，计算机中大部分的文件还是二进制文件。</code></p><p><span style="color:red;"><code>B.File类是对文件整体或者文件属性操作的类，例如创建文件、删除文件、查看文件是否存在等功能，不能操作文件内容；文件内容是用IO流操作的。</code></span></p><p><code>C.当输入过程中意外到达文件或流的末尾时，抛出EOFException异常,正常情况下读取到文件末尾时，返回一个特殊值表示文件读取完成，例如read()返回-1表示文件读取完成。</code></p><p><code>D.上面A选项已经说了，不论是文本文件还是二进制文件，在计算机中都是以二进制形式存储的，所以都当做二进制文件读取。</code></p><h3 id="2-Servlet的生命周期"><a href="#2-Servlet的生命周期" class="headerlink" title="2.Servlet的生命周期"></a>2.Servlet的生命周期</h3><p>Servlet的生命周期分为5个阶段：<code>加载、创建、初始化、处理客户请求、卸载</code>。<br>(1)加载：Servlet容器（Tomcat）通过类加载器加载servlet文件（.class）<br>(2)创建：通过调用servlet构造函数创建一个servlet对象<br>(3)初始化：调用init方法初始化<br>(4)处理客户请求：每当有一个客户请求，容器会创建一个线程来处理客户请求<br>(5)卸载：调用destroy方法让servlet自己释放其占用的资源<br>servlet是由Servlet容器负责加载Servlet类，创建Servlet对象并实例化，然后调用Servlet的init方法，进行初始化，之后调用Service方法。实例化和初始化不同。先实例化，再初始化。</p><h3 id="3-父类和子类初始化过程"><a href="#3-父类和子类初始化过程" class="headerlink" title="3.父类和子类初始化过程"></a>3.父类和子类初始化过程</h3><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B.png" alt=""></p><p>初始化过程是这样的： </p><p>1.首先，初始化父类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； </p><p>2.然后，初始化子类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； </p><p>3.其次，初始化父类的普通成员变量和代码块，在执行父类的构造方法；</p><p>4.最后，初始化子类的普通成员变量和代码块，在执行子类的构造方法； </p><p>（1）初始化父类的普通成员变量和代码块，执行 <code>C c = new C();</code> 输出C </p><p>（2）<code>super(&quot;B&quot;);</code> 表示调用父类的构造方法，不调用父类的无参构造函数，输出B </p><p>（3） <code>System.out.print(&quot;B&quot;);</code> </p><p> 所以输出<code>CBB</code></p><h3 id="4-初始化子类需要注意的地方"><a href="#4-初始化子类需要注意的地方" class="headerlink" title="4.初始化子类需要注意的地方"></a>4.初始化子类需要注意的地方</h3><p>在调用子类构造器之前，会先调用父类构造器，当子类构造器中没有使用”super(参数或无参数)”指定调用父类构造器时，是默认调用父类的无参构造器，如果父类中包含有参构造器，却没有无参构造器，则在子类构造器中一定要使用“super(参数)”指定调用父类的有参构造器，不然就会报错。</p><h3 id="5-StringBuilder、StringBuffer、String的比较"><a href="#5-StringBuilder、StringBuffer、String的比较" class="headerlink" title="5.StringBuilder、StringBuffer、String的比较"></a>5.StringBuilder、StringBuffer、String的比较</h3><p>首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：<code>StringBuilder &gt; StringBuffer &gt; String</code><br>String最慢的原因：</p><p>String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。<br>String：适用于少量的字符串操作的情况</p><p>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p><p>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p><p>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的。</p><h3 id="6-volatile关键字的两个作用"><a href="#6-volatile关键字的两个作用" class="headerlink" title="6.volatile关键字的两个作用"></a>6.volatile关键字的两个作用</h3><p>1.并发环境<span style="color:red;">可见性</span>：volatile修饰后的变量能够保证该变量在线程间的可见性，线程进行数据的读写操作时将绕开工作内存（CPU缓存）而直接跟主内存进行数据交互，即线程进行读操作时直接从主内存中读取，写操作时直接将修改后端变量刷新到主内存中，这样就能保证其他线程访问到的数据是最新数据 </p><p>  2.并发环境<span style="color:red;">有序性</span>：通过对volatile变量采取内存屏障（Memory barrier）的方式来防止编译重排序和CPU指令重排序，具体方式是通过在操作volatile变量的指令前后加入内存屏障，来实现happens-before关系，保证在多线程环境下的数据交互不会出现紊乱。</p><h3 id="7-for语句括号里的东西到底是啥意思"><a href="#7-for语句括号里的东西到底是啥意思" class="headerlink" title="7.for语句括号里的东西到底是啥意思"></a>7.for语句括号里的东西到底是啥意思</h3><p>for(1; 2; 3)</p><p>1.初始化语句，只会执行一次</p><p>2.循环终止控制，如果2的结果是false，循环就会终止</p><p>3.每次循环完毕的时候执行</p><h3 id="8-Java中的位运算符"><a href="#8-Java中的位运算符" class="headerlink" title="8.Java中的位运算符"></a>8.Java中的位运算符</h3><p>Java中的位运算符：</p><p><code>&gt;&gt;</code>表示右移，如果该数为正，则高位补0，若为负数，则高位补1；</p><p><code>&gt;&gt;&gt;</code>表示无符号右移，也叫逻辑右移，即若该数为正，则高位补0，而若该数为负数，则右移后高位同样补0。</p><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/%E4%BD%8D%E8%BF%90%E7%AE%97.png" alt=""></p><p>5的二进制是0101。</p><p>x=5&gt;&gt;2 （&gt;&gt;带符号右移）</p><p>将0101右移2位，为：0001。</p><p>y=x&gt;&gt;&gt;2 （&gt;&gt;&gt;无符号右移，左边空缺补充为0）</p><p>将0001右移2位，补0。结果为：0000。</p><p>所以得出答案0</p><h3 id="9-ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突"><a href="#9-ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突" class="headerlink" title="9.ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突"></a>9.ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突</h3><h3 id="10-线程调度"><a href="#10-线程调度" class="headerlink" title="10.线程调度"></a>10.线程调度</h3><p>线程调度分为协同式调度和抢占式调度，Java使用的是抢占式调度，也就是每个线程将由操作系统来分配执行时间，线程的切换不由线程本身来决定（协同式调度）。这就是平台独立的原因。</p><h3 id="11-反射"><a href="#11-反射" class="headerlink" title="11.反射"></a>11.反射</h3><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/%E5%8F%8D%E5%B0%84.png" alt=""></p><p><strong><em>Java的反射（reflection）机制是指在程序的运行状态中，可以构造任意一个类的对象，可以了解任意一个对象所属的类，可以了解任意一个类的成员变量和方法，可以调用任意一个对象的属性和方法。这种动态获取程序信息以及动态调用对象的功能称为Java语言的反射机制。反射被视为动态语言的关键。</em></strong></p><p>A选项Class类位于lang包下面，D选项反射的本质就是从字节码中查找，动态获取类的整容结构，包括属性，构造器，动态调用对象的方法，而不是修剪类，F选项我觉得应该是，使用了反射的效率都会降低，就算加了缓存</p><h3 id="12-一个-java文件只能有一个public类"><a href="#12-一个-java文件只能有一个public类" class="headerlink" title="12.一个.java文件只能有一个public类"></a>12.一个.java文件只能有一个public类</h3><p>当编写一个java源代码文件时，此文件通常被称为编译单元（有时也被称为转译单元）。每个编译单元都必须有一个后缀名.java，而在编译单元内则可以有一个public类，该类的名称必须与文件的名称相同（包括大小写，但不包括文件的后缀名.java）。每个编译单元只能有一个public类，否则编译器就不会接受。如果在该编译单元之中还有额外的类的话，那么在包之外的世界是无法看见这些类的，这是因为它们不是public类，而且它们主要用来为主public类提供支持。  </p><p>​                                                                                                                                 ——-《Java 编程思想》</p><h3 id="13-boolean和Boolean"><a href="#13-boolean和Boolean" class="headerlink" title="13.boolean和Boolean"></a>13.boolean和Boolean</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java专项练习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>公司二三事之挂载磁盘</title>
       <link href="/2020/7/"/>
       <url>/2020/7/</url>

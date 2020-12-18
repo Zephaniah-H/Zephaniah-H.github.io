@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Tag: 科学上网 - Zephaniah.</title>
+  <title>8 - Zephaniah.</title>
+  
+    <meta name="keywords" content="Java">
   
 
+  
+    <meta name="description" content="牛客网java专项练习的一些笔记">
   
 
   <!-- feed -->
@@ -70,7 +72,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -419,9 +421,12 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">8</div>
   <div id="pjax-enable-cover">true</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -452,41 +457,28 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow floatable reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow floatable article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
     
       
       
-        <a title='如何免费科学上网' href='/2020/4/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS4.png'></a>
+        <a title='8' href='/2020/8/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS8.png'></a>
       
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/4/">
-      如何免费科学上网
+  <h1 class="title">
+    <a href="/2020/8/">
+      8
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -509,9 +501,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/personal-blog/' rel="nofollow">
+    <a href='/categories/Java%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>personal blog</p>
+      <p>Java专项练习笔记</p>
     </a>
   </div>
 
@@ -522,7 +514,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>2020-07-21</p>
+    <p>2020-12-18</p>
   </a>
 </div>
 
@@ -535,14 +527,12 @@
           
             
               
-
-            
-          
-            
-              
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>科学上网</p></a></div>
-
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
 
             
           
@@ -555,40 +545,278 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文主要介绍了一个比较小众的操作简单的科学上网的方式。</p>
-      
-    </div>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h3 id="1-对于文件的一些描述"><a href="#1-对于文件的一些描述" class="headerlink" title="1.对于文件的一些描述"></a>1.对于文件的一些描述</h3><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/file.png" alt=""></p>
+<p><code>A.文件分为文本文件和二进制文件，计算机只认识二进制，所以实际上都是二进制的不同解释方式。文本文件是以不同编码格式显示的字符，例如Ascii、Unicode等，window中文本文件的后缀名有&quot;.txt&quot;,&quot;.log&quot;,各种编程语言的源码文件等；二进制文件就是用文本文档打开是看不懂乱码，只要能用文本打开的文件都可以算是文本文件，只是显示的结果不是你想要的，二进制文件只有用特殊的应用才能读懂的文件，例如&quot;.png&quot;,&quot;.bmp&quot;等，计算机中大部分的文件还是二进制文件。</code></p>
+<p><span style="color:red;"><code>B.File类是对文件整体或者文件属性操作的类，例如创建文件、删除文件、查看文件是否存在等功能，不能操作文件内容；文件内容是用IO流操作的。</code></span></p>
+<p><code>C.当输入过程中意外到达文件或流的末尾时，抛出EOFException异常,正常情况下读取到文件末尾时，返回一个特殊值表示文件读取完成，例如read()返回-1表示文件读取完成。</code></p>
+<p><code>D.上面A选项已经说了，不论是文本文件还是二进制文件，在计算机中都是以二进制形式存储的，所以都当做二进制文件读取。</code></p>
+<h3 id="2-Servlet的生命周期"><a href="#2-Servlet的生命周期" class="headerlink" title="2.Servlet的生命周期"></a>2.Servlet的生命周期</h3><p>Servlet的生命周期分为5个阶段：<code>加载、创建、初始化、处理客户请求、卸载</code>。<br>(1)加载：Servlet容器（Tomcat）通过类加载器加载servlet文件（.class）<br>(2)创建：通过调用servlet构造函数创建一个servlet对象<br>(3)初始化：调用init方法初始化<br>(4)处理客户请求：每当有一个客户请求，容器会创建一个线程来处理客户请求<br>(5)卸载：调用destroy方法让servlet自己释放其占用的资源<br>servlet是由Servlet容器负责加载Servlet类，创建Servlet对象并实例化，然后调用Servlet的init方法，进行初始化，之后调用Service方法。实例化和初始化不同。先实例化，再初始化。</p>
+<h3 id="3-父类和子类初始化过程"><a href="#3-父类和子类初始化过程" class="headerlink" title="3.父类和子类初始化过程"></a>3.父类和子类初始化过程</h3><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B.png" alt=""></p>
+<p>初始化过程是这样的： </p>
+<p>1.首先，初始化父类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； </p>
+<p>2.然后，初始化子类中的静态成员变量和静态代码块，按照在程序中出现的顺序初始化； </p>
+<p>3.其次，初始化父类的普通成员变量和代码块，在执行父类的构造方法；</p>
+<p>4.最后，初始化子类的普通成员变量和代码块，在执行子类的构造方法； </p>
+<p>（1）初始化父类的普通成员变量和代码块，执行 <code>C c = new C();</code> 输出C </p>
+<p>（2）<code>super(&quot;B&quot;);</code> 表示调用父类的构造方法，不调用父类的无参构造函数，输出B </p>
+<p>（3） <code>System.out.print(&quot;B&quot;);</code> </p>
+<p> 所以输出<code>CBB</code></p>
+<h3 id="4-初始化子类需要注意的地方"><a href="#4-初始化子类需要注意的地方" class="headerlink" title="4.初始化子类需要注意的地方"></a>4.初始化子类需要注意的地方</h3><p>在调用子类构造器之前，会先调用父类构造器，当子类构造器中没有使用”super(参数或无参数)”指定调用父类构造器时，是默认调用父类的无参构造器，如果父类中包含有参构造器，却没有无参构造器，则在子类构造器中一定要使用“super(参数)”指定调用父类的有参构造器，不然就会报错。</p>
+<h3 id="5-StringBuilder、StringBuffer、String的比较"><a href="#5-StringBuilder、StringBuffer、String的比较" class="headerlink" title="5.StringBuilder、StringBuffer、String的比较"></a>5.StringBuilder、StringBuffer、String的比较</h3><p>首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：<code>StringBuilder &gt; StringBuffer &gt; String</code><br>String最慢的原因：</p>
+<p>String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。<br>String：适用于少量的字符串操作的情况</p>
+<p>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
+<p>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
+<p>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的。</p>
+<h3 id="6-volatile关键字的两个作用"><a href="#6-volatile关键字的两个作用" class="headerlink" title="6.volatile关键字的两个作用"></a>6.volatile关键字的两个作用</h3><p>1.并发环境<span style="color:red;">可见性</span>：volatile修饰后的变量能够保证该变量在线程间的可见性，线程进行数据的读写操作时将绕开工作内存（CPU缓存）而直接跟主内存进行数据交互，即线程进行读操作时直接从主内存中读取，写操作时直接将修改后端变量刷新到主内存中，这样就能保证其他线程访问到的数据是最新数据 </p>
+<p>  2.并发环境<span style="color:red;">有序性</span>：通过对volatile变量采取内存屏障（Memory barrier）的方式来防止编译重排序和CPU指令重排序，具体方式是通过在操作volatile变量的指令前后加入内存屏障，来实现happens-before关系，保证在多线程环境下的数据交互不会出现紊乱。</p>
+<h3 id="7-for语句括号里的东西到底是啥意思"><a href="#7-for语句括号里的东西到底是啥意思" class="headerlink" title="7.for语句括号里的东西到底是啥意思"></a>7.for语句括号里的东西到底是啥意思</h3><p>for(1; 2; 3)</p>
+<p>1.初始化语句，只会执行一次</p>
+<p>2.循环终止控制，如果2的结果是false，循环就会终止</p>
+<p>3.每次循环完毕的时候执行</p>
+<h3 id="8-Java中的位运算符"><a href="#8-Java中的位运算符" class="headerlink" title="8.Java中的位运算符"></a>8.Java中的位运算符</h3><p>Java中的位运算符：</p>
+<p><code>&gt;&gt;</code>表示右移，如果该数为正，则高位补0，若为负数，则高位补1；</p>
+<p><code>&gt;&gt;&gt;</code>表示无符号右移，也叫逻辑右移，即若该数为正，则高位补0，而若该数为负数，则右移后高位同样补0。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/%E4%BD%8D%E8%BF%90%E7%AE%97.png" alt=""></p>
+<p>5的二进制是0101。</p>
+<p>x=5&gt;&gt;2 （&gt;&gt;带符号右移）</p>
+<p>将0101右移2位，为：0001。</p>
+<p>y=x&gt;&gt;&gt;2 （&gt;&gt;&gt;无符号右移，左边空缺补充为0）</p>
+<p>将0001右移2位，补0。结果为：0000。</p>
+<p>所以得出答案0</p>
+<h3 id="9-ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突"><a href="#9-ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突" class="headerlink" title="9.ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突"></a>9.ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突</h3><h3 id="10-线程调度"><a href="#10-线程调度" class="headerlink" title="10.线程调度"></a>10.线程调度</h3><p>线程调度分为协同式调度和抢占式调度，Java使用的是抢占式调度，也就是每个线程将由操作系统来分配执行时间，线程的切换不由线程本身来决定（协同式调度）。这就是平台独立的原因。</p>
+<h3 id="11-反射"><a href="#11-反射" class="headerlink" title="11.反射"></a>11.反射</h3><p><img src="https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/Java/%E9%9B%86%E5%90%88/%E5%8F%8D%E5%B0%84.png" alt=""></p>
+<p><strong><em>Java的反射（reflection）机制是指在程序的运行状态中，可以构造任意一个类的对象，可以了解任意一个对象所属的类，可以了解任意一个类的成员变量和方法，可以调用任意一个对象的属性和方法。这种动态获取程序信息以及动态调用对象的功能称为Java语言的反射机制。反射被视为动态语言的关键。</em></strong></p>
+<p>A选项Class类位于lang包下面，D选项反射的本质就是从字节码中查找，动态获取类的整容结构，包括属性，构造器，动态调用对象的方法，而不是修剪类，F选项我觉得应该是，使用了反射的效率都会降低，就算加了缓存</p>
+<h3 id="12-一个-java文件只能有一个public类"><a href="#12-一个-java文件只能有一个public类" class="headerlink" title="12.一个.java文件只能有一个public类"></a>12.一个.java文件只能有一个public类</h3><p>当编写一个java源代码文件时，此文件通常被称为编译单元（有时也被称为转译单元）。每个编译单元都必须有一个后缀名.java，而在编译单元内则可以有一个public类，该类的名称必须与文件的名称相同（包括大小写，但不包括文件的后缀名.java）。每个编译单元只能有一个public类，否则编译器就不会接受。如果在该编译单元之中还有额外的类的话，那么在包之外的世界是无法看见这些类的，这是因为它们不是public类，而且它们主要用来为主public类提供支持。  </p>
+<p>​                                                                                                                                 ——-《Java 编程思想》</p>
+<h3 id="13-boolean和Boolean"><a href="#13-boolean和Boolean" class="headerlink" title="13.boolean和Boolean"></a>13.boolean和Boolean</h3>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div style="text-align:center;">感谢观看！<span style="color:#FF0000;">❤️❤️❤️</span></div>
+  <div class='content'>
+    
+      <blockquote>
+	    <p>本文作者：Zephaniah.</p>
+        
+          
+            <p>版权声明：本博客所有内容除特别声明外均遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 协议，转载请注明出处！</p>
+
+          
+        
+          
+            <p>本文链接：<a href=http://zpheak.tk/2020/8/>http://zpheak.tk/2020/8/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <!--<div class='content article-entry'>
     
       
-        <div class="button readmore">
-          <a href="/2020/4/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>-->
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-18T22:50:35+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>最后更新于：2020-12-18 22:50:35</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://zpheak.tk/2020/8/&title=8 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS8.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zpheak.tk/2020/8/&title=8 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS8.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://zpheak.tk/2020/8/&title=8 - Zephaniah.&pics=https://cdn.jsdelivr.net/gh/Zephaniah-H/hexo-blog/images/dlamps/DlAmPS8.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACTElEQVR42u3cQY6DQAwEQP7/6ewDVhHTHoOCqbktEcTFqWNbe3xeeg5wcHBwcPBB8KN4/j3wy+fd9+3WCw4ODg4OPhG+HADCAs+gVXi5XnBwcHBw8MHw1YJS0OrzVgNPtV5wcHBwcHDw84LSwNIVoMDBwcHBwcHrgeMM1NWgAAcHBwcHB99v0KdBY/W+NCjdPkkBBwcHBwf/IXj3QODqv8v1goODg4ODD4J3ndXgkULa6wQHBwcHBx8E3w0Uuy+ge1Hg9Do4ODg4OPhgeNcXrDYSugNS+yQFHBwcHBz8AfB0gNC1+FcNTGljAxwcHBwcfCL87gHCbkOiuqAADg4ODg4+EV4NKl2DgPQ5aRBaTm7g4ODg4OAPhC//gA8LqzYiugMTODg4ODj4G+DVBn91wJ9eTxcM4oECODg4ODj4g+G7wSB9ThqYdhcMwMHBwcHBJ8KP4kkbBVctBMQLBODg4ODg4IPg1UBSHfCnwaRaTzxJAQcHBwcHfyA8HRB0NRq6Xmx8HRwcHBwcfBB8d0DwKZ7u4HPZJAUcHBwcHPyH4V0D/t0X0h2Mvn4PODg4ODj4IPjuSRf0Vu/fHSAsNyLAwcHBwcEfDO9e8EuDUfpC2icp4ODg4ODgA+BXNQx2P+9aVAAHBwcHB38DPB0YpIGnGozaghU4ODg4ODh4/I/dq4OH7hcCDg4ODg4OXg806QtLFxJuT27g4ODg4OA/BN8dKOwGnWqDY7lOcHBwcHDwgfDyD/vmwUMaaOK6wMHBwcHBB8HfdsDBwcHBwQecP8t8Q+79Q5qSAAAAAElFTkSuQmCC">
+          </div>
         </div>
       
     
-  </section>
-</article>
+  </div>
+</div>
 
-          </div>
+
+
         
       
-    
+    </div>
   </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
 
 
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/7/'>
+                <p class='title'>公司二三事之挂载磁盘<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+写在前面：本文建议与下面两篇文章一起食用。https://www.cnblogs.com/kl876435928/p/7819565.html、https://xiejun.blog.csdn...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+      <!-- ������City�氲װ���� -->
+
+<div class="post white-box reveal comments shadow floatable">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+	<div id="lv-container" data-id="city" data-uid="MTAyMC81MTA1MC8yNzUzMg==">
+</div>
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
     
   
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -699,29 +927,6 @@
   
     
     
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>欢迎来访</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("💙欢迎来自"+returnCitySN["cname"]+"的朋友💙");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script>
-    
-      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=L9XM0kcsQI7XBqchRaT0LYGfMnvcSFT98wUzkKMQC-w&cl=ffffff&w=a"></script>
-    
-  </div>
-</section>
-  
-
-  
-    
-    
   
 
   <section class="widget category shadow floatable desktop">
@@ -794,6 +999,29 @@
 
 
   
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对于文件的一些描述"><span class="toc-text">1.对于文件的一些描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Servlet的生命周期"><span class="toc-text">2.Servlet的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-父类和子类初始化过程"><span class="toc-text">3.父类和子类初始化过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-初始化子类需要注意的地方"><span class="toc-text">4.初始化子类需要注意的地方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-StringBuilder、StringBuffer、String的比较"><span class="toc-text">5.StringBuilder、StringBuffer、String的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-volatile关键字的两个作用"><span class="toc-text">6.volatile关键字的两个作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-for语句括号里的东西到底是啥意思"><span class="toc-text">7.for语句括号里的东西到底是啥意思</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Java中的位运算符"><span class="toc-text">8.Java中的位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突"><span class="toc-text">9.ThreadLocalMap使用开放定址法解决hash冲突，HashMap使用链地址法解决hash冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-线程调度"><span class="toc-text">10.线程调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-反射"><span class="toc-text">11.反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-一个-java文件只能有一个public类"><span class="toc-text">12.一个.java文件只能有一个public类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-boolean和Boolean"><span class="toc-text">13.boolean和Boolean</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
